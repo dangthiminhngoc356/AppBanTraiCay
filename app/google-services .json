@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "190165918050",
+    "firebase_url": "https://bantraicay-4a05d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bantraicay-4a05d",
+    "storage_bucket": "bantraicay-4a05d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190165918050:android:0c733a88e36286797a4c3b",
+        "android_client_info": {
+          "package_name": "com.example.appbantraicay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190165918050-7sa85l43shf6upqtrjev4vugg18kl2u3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI48YITHrzXBfq-21Rrsq5vxAk7PikXKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190165918050-7sa85l43shf6upqtrjev4vugg18kl2u3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
