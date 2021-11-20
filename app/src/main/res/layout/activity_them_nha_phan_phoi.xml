@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".ThemNhaPhanPhoiActivity">
+
+    <TextView
+        android:id="@+id/edtdiachi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Địa Chỉ:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập địa chỉ"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#00BCD4"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/edtemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập email"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#00BCD4"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/edtphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập số điện thoại"
+        android:text="Số điện thoại"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập số điện thoại"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#00BCD4"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/edtngay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ngày:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_ngay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập ngày"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#00BCD4"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/edtsoluong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số lượng:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_soluong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập số lượng"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#00BCD4" />
+
+    <TextView
+        android:id="@+id/edttensp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên sản phẩm:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_tensp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập tên sản phẩm"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#00BCD4" />
+
+    <TextView
+        android:id="@+id/edttennpp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TênNPP"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_tennpp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập tên nhà phân phối"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#00BCD4" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"></LinearLayout>
+
+    <Button
+        android:id="@+id/btn_them"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="THÊM" />
+
+    <Button
+        android:id="@+id/btn_huy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HỦY" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TRỞ VỀ" />
+</LinearLayout>
