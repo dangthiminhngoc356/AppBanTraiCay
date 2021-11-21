@@ -85,7 +85,6 @@ public class Login extends AppCompatActivity {
                 else {
                     Toast.makeText(Login.this, "Account with this"+phone+"doesn't exist", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
-                    Toast.makeText(Login.this, "", Toast.LENGTH_SHORT).show();
                 }
             }
 
