@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
     Button login;
     EditText phonenumber,password;
     ProgressDialog loadingBar;
-    String parentDataname;
+    String parentDataname = "Users";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +40,8 @@ public class Login extends AppCompatActivity {
     }
 
     private void LoginUser() {
-        String phone= phonenumber.getText().toString();
-        String pass= password.getText().toString();
+        String phone = phonenumber.getText().toString().trim();
+        String pass = password.getText().toString().trim();
 
         if(TextUtils.isEmpty(phone)){
             Toast.makeText(this,"Please write your phonenumber",Toast.LENGTH_LONG).show();
@@ -68,12 +68,12 @@ public class Login extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.child(parentDataname).child(phone).exists()){
-                    Users usersdata=snapshot.child(parentDataname).child(phone).getValue(Users.class);
+                    Users usersdata = snapshot.child(parentDataname).child(phone).getValue(Users.class);
                     if (usersdata.getPhone().equals(phone)) {
                         if (usersdata.getPassword().equals(pass)) {
                             Toast.makeText(Login.this, "Loggin sucessfully", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
-                            Intent intent = new Intent(Login.this,HomeAcitity.class);
+                            Intent intent = new Intent(Login.this, HomeActivity.class);
                             startActivity(intent);
                         }
                         else {
@@ -83,7 +83,7 @@ public class Login extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(Login.this, "Account with this"+phone+"doesn't exist", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Account with this "+ phone +" doesn't exist", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
             }
