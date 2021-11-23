@@ -63,15 +63,14 @@
         android:id="@+id/checkbox_rememberme"
         style="@style/Widget.AppCompat.CompoundButton.CheckBox"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:layout_below="@id/et_password_login"
         android:layout_marginLeft="15dp"
+        android:gravity="center_vertical"
         android:text="Remember me"
         android:textColor="@color/design_default_color_primary_dark"
-        android:gravity="center_vertical"
         android:textSize="16dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/tv_fogetpassword"
 
@@ -99,17 +98,30 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp" />
+
     <TextView
         android:id="@+id/tv_admin"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_below="@id/btn_login_main"
-        android:layout_marginLeft="335dp"
-        android:text="Admin"
+        android:layout_marginLeft="280dp"
+        android:text="I'm an Admin"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tv_notanadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/btn_login_main"
+        android:layout_marginLeft="20dp"
+        android:text="I'm not an Admin"
         android:textColor="@color/design_default_color_primary"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:visibility="invisible"
         />
+
 
 
 </RelativeLayout>
