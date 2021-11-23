@@ -3,6 +3,8 @@ package com.example.appbantraicay.Prevalent;
 import com.example.appbantraicay.model.Users;
 
 public class Prevalent {
-    public static Users currentOnlineUser;
+    private static Users currentOnlineUser;
+    public static final String UserPhoneKey="UserPhone";
+    public static final String UserPasswordKey="UserPassword";
 
 }

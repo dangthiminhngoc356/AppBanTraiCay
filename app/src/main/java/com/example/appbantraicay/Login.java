@@ -9,9 +9,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.appbantraicay.Prevalent.Prevalent;
 import com.example.appbantraicay.model.Users;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,22 +22,44 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import io.paperdb.Paper;
+
 public class Login extends AppCompatActivity {
 
     Button login;
     EditText phonenumber,password;
     ProgressDialog loadingBar;
     String parentDataname = "Users";
+    CheckBox chkBoxRememberMe;
+    TextView admin, notanadmin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        Paper.init(this);
         matching();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 LoginUser();
+            }
+        });
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                login.setText("Login admin");
+                admin.setVisibility(View.INVISIBLE);
+                notanadmin.setVisibility(View.VISIBLE);
+                parentDataname = "Admins";
+            }
+        });
+        notanadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                login.setText("Login");
+                admin.setVisibility(View.VISIBLE);
+                notanadmin.setVisibility(View.INVISIBLE);
+                parentDataname = "Users";
             }
         });
     }
@@ -61,6 +86,12 @@ public class Login extends AppCompatActivity {
     }
 
     private void AllowAccessToAccount(String phone, String pass) {
+        if(chkBoxRememberMe.isChecked()){
+            Paper.book().write(Prevalent.UserPhoneKey,phone);
+            Paper.book().write(Prevalent.UserPasswordKey,pass);
+        }
+
+
         final DatabaseReference Ref;
         Ref= FirebaseDatabase.getInstance().getReference();
         
@@ -71,11 +102,22 @@ public class Login extends AppCompatActivity {
                     Users usersdata = snapshot.child(parentDataname).child(phone).getValue(Users.class);
                     if (usersdata.getPhone().equals(phone)) {
                         if (usersdata.getPassword().equals(pass)) {
-                            Toast.makeText(Login.this, "Loggin sucessfully", Toast.LENGTH_SHORT).show();
-                            loadingBar.dismiss();
-                            Intent intent = new Intent(Login.this, HomeActivity.class);
-                            startActivity(intent);
+                            if(parentDataname.equals("Admins")){
+                                Toast.makeText(Login.this, "Logged in sucessfully", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
+
+                                Intent intent = new Intent(Login.this, AdminActivity.class);
+                                startActivity(intent);
+                            }
+                            else if(parentDataname.equals("Users")){
+                                Toast.makeText(Login.this, "Logged in sucessfully", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
+
+//                                Intent intent = new Intent(Login.this, HomeActivity.class);
+//                                startActivity(intent);
+                            }
                         }
+
                         else {
                             loadingBar.dismiss();
                             Toast.makeText(Login.this, "Password is incorrect", Toast.LENGTH_SHORT).show();
@@ -100,5 +142,8 @@ public class Login extends AppCompatActivity {
         phonenumber = (EditText) findViewById(R.id.et_login_phone);
         password=(EditText) findViewById(R.id.et_password_login);
         loadingBar=new ProgressDialog(this);
+        chkBoxRememberMe = (CheckBox) findViewById(R.id.checkbox_rememberme);
+        admin = (TextView) findViewById(R.id.tv_admin);
+        notanadmin = (TextView) findViewById(R.id.tv_notanadmin);
     }
 }
