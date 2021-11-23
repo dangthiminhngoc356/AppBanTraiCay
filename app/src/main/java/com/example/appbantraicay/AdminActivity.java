@@ -13,6 +13,7 @@ public class AdminActivity extends AppCompatActivity {
     TextView tenadmin;
     Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat;
     String loggedinusername;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,14 @@ public class AdminActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        sanpham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, AdminProductsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void matching() {
@@ -40,5 +49,6 @@ public class AdminActivity extends AppCompatActivity {
         loaisp = (Button) findViewById(R.id.btn_loaisp);
         tenadmin = (TextView) findViewById(R.id.txt_tenAdmin);
         tenadmin.setText(loggedinusername);
+
     }
 }
