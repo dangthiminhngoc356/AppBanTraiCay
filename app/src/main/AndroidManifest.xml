@@ -10,14 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBanTraiCay">
         <activity
-            android:name=".UpdateProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddNewProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminProductsActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ConfirmFinalOrderActivity"
             android:exported="false" />
