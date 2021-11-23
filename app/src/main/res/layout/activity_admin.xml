@@ -6,33 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".AdminActivity">
 
+    <TextView
+        android:id="@+id/txt_tenAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
     <Button
         android:id="@+id/btn_sanpham"
         android:layout_width="302dp"
         android:layout_height="48dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="24dp"
         android:text="Sản phẩm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_taikhoan"
-        android:layout_width="302dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:text="Tài khoản"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_loaisp" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_tenAdmin" />
 
     <Button
         android:id="@+id/btn_donhang"
         android:layout_width="302dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="Đơn hàng"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -43,7 +43,7 @@
         android:id="@+id/btn_nhaphanphoi"
         android:layout_width="302dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="Nhà phân phối"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -54,12 +54,23 @@
         android:id="@+id/btn_loaisp"
         android:layout_width="302dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="Loại sản phẩm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_nhaphanphoi" />
+
+    <Button
+        android:id="@+id/btn_taikhoan"
+        android:layout_width="302dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="Tài khoản"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_loaisp" />
 
     <Button
         android:id="@+id/btn_admin_dangxuat"
@@ -75,22 +86,11 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fruit" />
-
-    <TextView
-        android:id="@+id/txt_tenAdmin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:textColor="#000000"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

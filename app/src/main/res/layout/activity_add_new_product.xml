@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewProductActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="THÊM SẢN PHẨM"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_themsp_save"
+        android:layout_width="106dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#4CAF50"
+        android:foregroundTint="#4CAF50"
+        android:text="Save"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_themsp_dongia" />
+
+    <Button
+        android:id="@+id/btn_themsp_cancel"
+        android:layout_width="106dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#E91E63"
+        android:foregroundTint="#4CAF50"
+        android:text="Cancel"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toEndOf="@+id/btn_themsp_save"
+        app:layout_constraintTop_toBottomOf="@+id/et_themsp_dongia" />
+
+    <EditText
+        android:id="@+id/et_themsp_tensp"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Tên sản phẩm"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_themsp_hinhanh" />
+
+    <EditText
+        android:id="@+id/et_themsp_mota"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:hint="Mô tả"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_themsp_hinhanh" />
+
+    <EditText
+        android:id="@+id/et_themsp_dongia"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="188dp"
+        android:ems="10"
+        android:hint="Đơn giá"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_themsp_hinhanh" />
+
+    <ImageView
+        android:id="@+id/iv_themsp_hinhanh"
+        android:layout_width="175dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
