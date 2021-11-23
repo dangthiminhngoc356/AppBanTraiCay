@@ -73,12 +73,8 @@ public class Login extends AppCompatActivity {
                         if (usersdata.getPassword().equals(pass)) {
                             Toast.makeText(Login.this, "Loggin sucessfully", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
-                            if(usersdata.getRole().equals("Admin")) {
-                                Intent intent = new Intent(Login.this, HomeActivity.class);
-                                startActivity(intent);
-                            } else {
-                                // Đăng nhập vào giao diện người dùng
-                            }
+                            Intent intent = new Intent(Login.this, HomeActivity.class);
+                            startActivity(intent);
                         }
                         else {
                             loadingBar.dismiss();

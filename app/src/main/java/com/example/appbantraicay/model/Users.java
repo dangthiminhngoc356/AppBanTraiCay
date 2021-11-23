@@ -1,17 +1,16 @@
 package com.example.appbantraicay.model;
 
 public class Users {
-    private String name, password, phone, role;
+    private String name,password,phone;
 
     public Users(){
 
     }
 
-    public Users(String name, String password, String phone, String role) {
+    public Users(String name, String password, String phone) {
         this.name = name;
         this.password = password;
         this.phone = phone;
-        this.role = role;
     }
 
     public String getName() {
@@ -36,13 +35,5 @@ public class Users {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }
