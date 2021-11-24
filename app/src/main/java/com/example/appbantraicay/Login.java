@@ -1,8 +1,5 @@
 package com.example.appbantraicay;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +10,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbantraicay.Prevalent.Prevalent;
 import com.example.appbantraicay.model.Users;
@@ -32,6 +33,9 @@ public class Login extends AppCompatActivity {
     String parentDataname = "Users";
     CheckBox chkBoxRememberMe;
     TextView admin, notanadmin;
+
+    public static final String INTENTEXTRAKEY_LOGGEDINUSERNAME = "iek_loggedinusername";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,6 +111,9 @@ public class Login extends AppCompatActivity {
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(Login.this, AdminActivity.class);
+                                intent.putExtra(INTENTEXTRAKEY_LOGGEDINUSERNAME, usersdata.getName());
+                                startActivity(intent);
+                                finish();
                                 startActivity(intent);
                             }
                             else if(parentDataname.equals("Users")){
