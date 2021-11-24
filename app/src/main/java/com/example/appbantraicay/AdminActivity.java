@@ -40,6 +40,12 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        loaisp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminActivity.this, ProductTypeAdminActivity.class));
+            }
+        });
     }
 
     private void matching() {
