@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appbantraicay.model.ProductType;
@@ -23,20 +24,37 @@ public class AddProductTypeActivity extends AppCompatActivity {
     EditText name, descrip;
     Button save, cancel;
     String ID;
+    TextView xoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product_type);
         matching();
+        xoa.setVisibility(View.INVISIBLE);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             ID = bundle.getString("ID");
             if (!ID.equals("Add")) {
                 load();
+                xoa.setVisibility(View.VISIBLE);
             }
             Luu();
+            Xoa();
         }
+    }
+
+    private void Xoa() {
+        xoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference loaisp = FirebaseDatabase.getInstance().getReference("LoaiSP");
+                loaisp.child(ID).removeValue();
+                Toast.makeText(AddProductTypeActivity.this, "Đã xóa loại sản phẩm!", Toast.LENGTH_LONG).show();
+                finish();
+                startActivity(new Intent(AddProductTypeActivity.this, ProductTypeAdminActivity.class));
+            }
+        });
     }
 
     private void Luu() {
@@ -102,6 +120,7 @@ public class AddProductTypeActivity extends AppCompatActivity {
         descrip = (EditText) findViewById(R.id.et_productTypeDescription);
         save = (Button) findViewById(R.id.btn_add_save_productType);
         cancel = (Button) findViewById(R.id.btn_add_cancel_productType);
+        xoa = (TextView) findViewById(R.id.tv_delete_product_type);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
