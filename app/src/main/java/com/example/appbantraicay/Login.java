@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,7 +33,9 @@ public class Login extends AppCompatActivity {
     String parentDataname = "Users";
     CheckBox chkBoxRememberMe;
     TextView admin, notanadmin;
+
     public static final String INTENTEXTRAKEY_LOGGEDINUSERNAME = "iek_loggedinusername";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +114,7 @@ public class Login extends AppCompatActivity {
                                 intent.putExtra(INTENTEXTRAKEY_LOGGEDINUSERNAME, usersdata.getName());
                                 startActivity(intent);
                                 finish();
+                                startActivity(intent);
                             }
                             else if(parentDataname.equals("Users")){
                                 Toast.makeText(Login.this, "Logged in sucessfully", Toast.LENGTH_SHORT).show();

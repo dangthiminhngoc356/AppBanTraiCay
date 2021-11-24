@@ -13,11 +13,18 @@ public class AdminActivity extends AppCompatActivity {
     TextView tenadmin;
     Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat;
     String loggedinusername;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.Toast;
+
+public class AdminActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
         loggedinusername = this.getIntent().getStringExtra(Login.INTENTEXTRAKEY_LOGGEDINUSERNAME);
 
         Toast.makeText(this, "Welcome " + loggedinusername, Toast.LENGTH_SHORT).show();
@@ -49,6 +56,8 @@ public class AdminActivity extends AppCompatActivity {
         loaisp = (Button) findViewById(R.id.btn_loaisp);
         tenadmin = (TextView) findViewById(R.id.txt_tenAdmin);
         tenadmin.setText(loggedinusername);
+      
+        Toast.makeText(this, "Welcome Admin", Toast.LENGTH_SHORT).show();
 
     }
 }

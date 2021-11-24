@@ -9,6 +9,13 @@
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/activity_admin.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/activity_home.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/activity_login.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/content_home.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/nav_header_home.xml" value="0.25" />
+        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
+        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/menu/home.xml" value="0.209375" />
       </map>
     </option>
   </component>
