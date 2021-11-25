@@ -13,9 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.appbantraicay.ViewHolder.DonHangViewHolder;
-import com.example.appbantraicay.ViewHolder.SanphamViewHolder;
 import com.example.appbantraicay.model.DonHang;
-import com.example.appbantraicay.model.SanPham;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
