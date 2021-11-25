@@ -24,7 +24,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"><![CDATA[
+
+
+
+
+
+
+
+        =======
+>>>>>>> origin/BuiHoangNam
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập ngày"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+
+
+
+
+
+
+
+
+        =======
+            android:id="@+id/et_tensp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập tên sp"
+>>>>>>> origin/BuiHoangNam
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+
+
+
+
+
+
+        ]]>
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập id"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/et_diachi"
@@ -32,7 +83,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Nhập địa chỉ"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/et_email"
@@ -53,6 +105,16 @@
             android:minHeight="48dp" />
 
         <EditText
+            android:id="@+id/et_idsp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập id sản phẩm 1"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+
+        <EditText
             android:id="@+id/et_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,12 +133,46 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/et_tensp"
+            android:id="@+id/et_tensp1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nhập tên sp"
+            android:hint="Nhập tên sản phẩm 1"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/et_idsp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập id tên sản phẩm 1"
             android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/et_date2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập ngày"
+
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/et_soluong2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập số lượng"
+            android:minHeight="48dp" />
+
+
+        <EditText
+            android:id="@+id/et_tensp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập tên sản phẩm 2"
             android:minHeight="48dp" />
 
         <EditText
@@ -84,7 +180,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Office phone"
+            android:hint="Nhập tên nhà phân phối"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
@@ -100,6 +196,18 @@
             android:layout_height="wrap_content"
             android:text="HỦY" />
 
-    </LinearLayout>
+    </LinearLayout><![CDATA[=======
+>>>>>>> origin/BuiHoangNam
+            android:id="@+id/et_diachi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập địa chỉ"
+
+        =======
+            android:inputType="textPersonName" />
+>>>>>>> origin/BuiHoangNam
+
+        ]]>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
