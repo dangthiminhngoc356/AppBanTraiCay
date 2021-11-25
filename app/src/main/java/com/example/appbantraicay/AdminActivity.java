@@ -40,6 +40,14 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        donhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, AdminOrderActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void matching() {

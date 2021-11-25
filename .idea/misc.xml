@@ -3,19 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/drawable/buttoncancel.xml" value="0.2203125" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/drawable/buttons.xml" value="0.2203125" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_add_new_product.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_add_order.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_admin.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_admin_order.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_admin_products.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_cap_nhat_nha_phan_phoi.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_confirm_final_order.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_them_nha_phan_phoi.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_update_order.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/activity_update_product.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/order_admin.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AppBanTraiCay/app/src/main/res/layout/sanpham_admin.xml" value="0.20416666666666666" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/drawable/button.xml" value="0.22552083333333334" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/drawable/buttons.xml" value="0.22552083333333334" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/drawable/inputs_design.xml" value="0.22552083333333334" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_register.xml" value="0.33" />
-        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/activity_admin.xml" value="0.209375" />
-        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/activity_home.xml" value="0.209375" />
-        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/activity_login.xml" value="0.209375" />
-        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/content_home.xml" value="0.209375" />
-        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/layout/nav_header_home.xml" value="0.25" />
-        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
-        <entry key="..\:/laptrinhMobile/BanTraiCayApp/app/src/main/res/menu/home.xml" value="0.209375" />
       </map>
     </option>
   </component>
