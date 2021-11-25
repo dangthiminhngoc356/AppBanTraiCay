@@ -3,10 +3,6 @@ package com.example.appbantraicay.model;
 public class DonHang {
     private String Ten, SDT, Diachi, TenSP, SoLuong, DonGia, ID;
 
-    public DonHang() {
-
-    }
-
     public DonHang(String Ten, String SDT, String Diachi, String tenSP, String SoLuong, String DonGia, String ID) {
         this.Ten = Ten;
         this.SDT = SDT;
@@ -22,7 +18,7 @@ public class DonHang {
     }
 
     public void setTen(String ten) {
-        this.Ten = ten;
+        Ten = ten;
     }
 
     public String getSDT() {
@@ -37,16 +33,16 @@ public class DonHang {
         return Diachi;
     }
 
-    public void setDiachi(String Diachi) {
-        this.Diachi = Diachi;
+    public void setDiachi(String diaChi) {
+        Diachi = Diachi;
     }
 
     public String getTenSP() {
         return TenSP;
     }
 
-    public void setTenSP(String TenSP) {
-        this.TenSP = TenSP;
+    public void setTenSP(String tenSP) {
+        TenSP = TenSP;
     }
 
     public String getSoLuong() {
@@ -54,23 +50,24 @@ public class DonHang {
     }
 
     public void setSoLuong(String soLuong) {
-        this.SoLuong = soLuong;
+        SoLuong = SoLuong;
     }
 
     public String getDonGia() {
         return DonGia;
     }
 
-    public void setDonGia(String DonGia) {
-        this.DonGia = DonGia;
-    }
+    public void setDonGia(String donGia) { DonGia = DonGia; }
 
     public String getId() {
         return ID;
     }
 
-    public void setId(String ID) {
-        this.ID = ID;
+    public void setId(String id) {
+        ID = ID;
     }
 
+    public DonHang(){
+
+    }
 }
