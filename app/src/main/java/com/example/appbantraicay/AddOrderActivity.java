@@ -75,7 +75,6 @@ public class AddOrderActivity extends AppCompatActivity {
     }
 
     private void validateOrder() {
-        Task<AuthResult> task = FirebaseAuth.getInstance().signInAnonymously();
         Ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
