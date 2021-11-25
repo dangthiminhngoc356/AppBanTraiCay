@@ -81,33 +81,7 @@ public class AddOrderActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int soluongdh = (int) snapshot.getChildrenCount() + 1;
                 iddh = "DH" + soluongdh;
-                task.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(AddOrderActivity.this, "Lỗi: " + e.toString(), Toast.LENGTH_LONG).show();
-                    }
-                });
-                task.addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        Task<Uri> uriTask = task.continueWithTask(new Continuation<AuthResult, Task<Uri>>() {
-                            @Override
-                            public Task<Uri> then(@NonNull Task<AuthResult> task) throws Exception {
-                                if (!task.isSuccessful()) {
-                                    throw task.getException();
-                                }
-                                return null;
-                            }
-                        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Uri> task) {
-                                if (task.isSuccessful()) {
-
-                                }
-                            }
-                        });
-                    }
-                });
+                saveOrder();
             }
 
             @Override
