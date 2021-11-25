@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.appbantraicay">
+    package="com.example.appbantraicay" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppBanTraiCay">
+        android:theme="@style/Theme.AppBanTraiCay" >
         <activity
             android:name=".UpdateOrderActivity"
             android:exported="false" />
@@ -18,24 +18,6 @@
         <activity
             android:name=".AdminOrderActivity"
             android:exported="false" />
-        <activity
-            android:name=".AdminProductsActivity"
-            android:exported="true" />
-        <activity
-            android:name=".UpdateProductActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AddNewProductActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AdminProductsActivity"
-            android:exported="true" />
-        <activity
-            android:name=".UpdateProductActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AddNewProductActivity"
-            android:exported="true" />
         <activity
             android:name=".AdminProductsActivity"
             android:exported="true" />
