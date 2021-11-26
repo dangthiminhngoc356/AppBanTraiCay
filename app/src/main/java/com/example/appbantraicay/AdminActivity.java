@@ -11,7 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminActivity extends AppCompatActivity {
     TextView tenadmin;
+
+    Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat,taikhoan;
+
     Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat;
+
     String loggedinusername;
 
     @Override
@@ -40,10 +44,18 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        taikhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, AdminAccountlistActivity.class);
+                startActivity(intent);
+
         loaisp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminActivity.this, ProductTypeAdminActivity.class));
+
             }
         });
     }
@@ -54,6 +66,9 @@ public class AdminActivity extends AppCompatActivity {
         donhang = (Button) findViewById(R.id.btn_donhang);
         nhaphanphoi = (Button) findViewById(R.id.btn_nhaphanphoi);
         loaisp = (Button) findViewById(R.id.btn_loaisp);
+
+        taikhoan=(Button) findViewById(R.id.btn_taikhoan);
+
         tenadmin = (TextView) findViewById(R.id.txt_tenAdmin);
         tenadmin.setText(loggedinusername);
 
