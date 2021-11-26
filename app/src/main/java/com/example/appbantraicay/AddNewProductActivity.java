@@ -23,10 +23,18 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import com.google.firebase.database.Query;
+
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import java.util.HashMap;
 
@@ -67,7 +75,11 @@ public class AddNewProductActivity extends AppCompatActivity {
                 input_tensp = tensp.getText().toString();
                 input_mota = mota.getText().toString();
                 input_dongia = dongia.getText().toString().trim();
+
                 if(imageUri == null) {
+
+                if (imageUri == null) {
+
                     Toast.makeText(AddNewProductActivity.this, "Vui lòng chọn hình ảnh", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(input_tensp)) {
                     Toast.makeText(AddNewProductActivity.this, "Vui lòng nhập tên sản phẩm", Toast.LENGTH_SHORT).show();
@@ -88,8 +100,17 @@ public class AddNewProductActivity extends AppCompatActivity {
         Ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 int soluongsp = (int) snapshot.getChildrenCount() + 1;
                 idsp = "SP" + soluongsp;
+
+                Calendar calendar = Calendar.getInstance();
+                SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+                SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+                String saveCurrentDate = currentDate.format(calendar.getTime());
+                String saveCurrentTime = currentTime.format(calendar.getTime());
+                idsp = "SP" + saveCurrentDate + saveCurrentTime;
+
                 StorageReference filePath = productImageRef.child(idsp + ".jpg");
                 final UploadTask uploadTask = filePath.putFile(imageUri);
                 uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -103,7 +124,11 @@ public class AddNewProductActivity extends AppCompatActivity {
                         Task<Uri> uriTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                             @Override
                             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+
                                 if(!task.isSuccessful()) {
+
+                                if (!task.isSuccessful()) {
+
                                     throw task.getException();
                                 }
                                 dowloadImage = filePath.getDownloadUrl().toString();
@@ -112,7 +137,10 @@ public class AddNewProductActivity extends AppCompatActivity {
                         }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                             @Override
                             public void onComplete(@NonNull Task<Uri> task) {
-                                if(task.isSuccessful()) {
+              if(task.isSuccessful()) {
+
+                                if (task.isSuccessful()) {
+
                                     dowloadImage = task.getResult().toString();
                                     saveProduct();
                                 }
@@ -139,7 +167,11 @@ public class AddNewProductActivity extends AppCompatActivity {
         Ref.child(idsp).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
+
                 if(!task.isSuccessful()) {
+
+                if (!task.isSuccessful()) {
+
                     Toast.makeText(AddNewProductActivity.this, "Thêm sản phẩm thất bại", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(AddNewProductActivity.this, "Thêm sản phẩm thành công", Toast.LENGTH_LONG).show();
@@ -162,6 +194,9 @@ public class AddNewProductActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
+
+        if (requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
+
             imageUri = data.getData();
             hinhanh.setImageURI(imageUri);
         }
