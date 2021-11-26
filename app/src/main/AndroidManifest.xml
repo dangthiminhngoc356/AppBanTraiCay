@@ -16,14 +16,14 @@
             android:name=".ProductTypeAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminProductsActivity"
-            android:exported="true" />
+            android:name=".UpdateOrderActivity"
+            android:exported="false" />
         <activity
-            android:name=".UpdateProductActivity"
-            android:exported="true" />
+            android:name=".AddOrderActivity"
+            android:exported="false" />
         <activity
-            android:name=".AddNewProductActivity"
-            android:exported="true" />
+            android:name=".AdminOrderActivity"
+            android:exported="false" />
         <activity
             android:name=".AdminProductsActivity"
             android:exported="true" />
@@ -43,9 +43,6 @@
             android:name=".second_main"
             android:exported="true" />
         <activity
-            android:name=".ConfirmFinalOrderActivity"
-            android:exported="false" />
-        <activity
             android:name=".AdminActivity"
             android:exported="false" />
         <activity
@@ -56,7 +53,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
