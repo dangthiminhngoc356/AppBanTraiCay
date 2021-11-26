@@ -20,7 +20,7 @@ import java.util.HashMap;
 
 public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
     Button update, delete, cancel;
-    EditText ID, DIACHI, EMAIL, SDT, SP1, NGAY, SOLUONG, SP2, NGAY2, SOLUONG2, TENSP, TENSP2, TENNPP;
+    EditText ID, DIACHI, EMAIL, SDT, SP1, NGAY, SOLUONG, TENSP, TENNPP;
 
     String key;
     @Override
@@ -47,10 +47,6 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
                 String ssoluong = SOLUONG.getText().toString();
                 String sngay = NGAY.getText().toString();
                 String stensp = TENSP.getText().toString();
-                String ssp2 = SP2.getText().toString();
-                String ssoluong2 = SOLUONG2.getText().toString();
-                String sngay2 = NGAY2.getText().toString();
-                String stensp2 = TENSP2.getText().toString();
                 String stennpp = TENNPP.getText().toString();
 
 
@@ -64,11 +60,6 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
                 myRef.child(contactId).child("tên sản phẩm 1").setValue(stensp);
                 myRef.child(contactId).child("id").setValue(contactId);
 
-
-                myRef.child(contactId).child("sản phẩm 2").setValue(ssp2);
-                myRef.child(contactId).child("ngày sản phẩm 2").setValue(sngay2);
-                myRef.child(contactId).child("số lượng sản phẩm 2").setValue(ssoluong2);
-                myRef.child(contactId).child("tên sản phẩm 2").setValue(stensp2);
 
                 myRef.child(contactId).child("tên nhà phân phối").setValue(stennpp);
                 finish();
@@ -109,10 +100,6 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
                     NGAY.setText(hashMap.get("ngày sản phẩm 1").toString());
                     SOLUONG.setText(hashMap.get("số lượng sản phẩm 1").toString());
                     TENSP.setText(hashMap.get("tên sản phẩm 1").toString());
-                    SP2.setText(hashMap.get("sản phẩm 2").toString());
-                    NGAY2.setText(hashMap.get("ngày sản phẩm 2").toString());
-                    SOLUONG2.setText(hashMap.get("số lượng sản phẩm 2").toString());
-                    TENSP2.setText(hashMap.get("tên sản phẩm 2").toString());
                     TENNPP.setText(hashMap.get("tên nhà phân phối").toString());
 
                 } catch (Exception e) {
@@ -129,19 +116,13 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
 
     private void matching() {
 
-        ID =(EditText) findViewById(R.id.et_tensp2);
+        ID =(EditText) findViewById(R.id.et_id);
         DIACHI = (EditText) findViewById(R.id.et_diachi);
         EMAIL = (EditText) findViewById(R.id.et_email);
         SDT = (EditText) findViewById(R.id.et_phone);
         SP1 = (EditText) findViewById(R.id.et_idsp1);
-        SOLUONG = (EditText) findViewById(R.id.et_soluong2);
         NGAY = (EditText) findViewById(R.id.et_date);
-        TENSP = (EditText) findViewById(R.id.et_tensp2);
-        SP2 = (EditText) findViewById(R.id.et_idsp1);
-        SOLUONG2 = (EditText) findViewById(R.id.et_soluong2);
-        NGAY2 = (EditText) findViewById(R.id.et_date2);
-        TENSP2 = (EditText) findViewById(R.id.et_tensp2);
-
+        TENSP = (EditText) findViewById(R.id.et_tensp1);
         TENNPP = (EditText) findViewById(R.id.et_tennpp);
         update = findViewById(R.id.btn_Update);
         delete = findViewById(R.id.btn_Delete);

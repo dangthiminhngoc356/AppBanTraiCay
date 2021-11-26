@@ -140,40 +140,6 @@
             android:hint="Nhập tên sản phẩm 1"
             android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/et_idsp2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập id tên sản phẩm 1"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/et_date2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập ngày"
-
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/et_soluong2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập số lượng"
-            android:minHeight="48dp" />
-
-
-        <EditText
-            android:id="@+id/et_tensp2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập tên sản phẩm 2"
-            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/et_tennpp"

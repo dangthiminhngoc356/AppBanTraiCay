@@ -3,14 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_admin_order.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_admin_products.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_add_new_product.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_add_order.xml" value="0.264" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_admin_order.xml" value="0.264" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_admin_products.xml" value="0.4" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_cap_nhat_nha_phan_phoi.xml" value="0.264" />
-        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_second_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_second_main.xml" value="0.4" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_them_nha_phan_phoi.xml" value="0.264" />
-        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_update_order.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_update_order.xml" value="0.264" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_update_product.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/order_admin.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/sanpham_admin.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/sanpham_admin.xml" value="0.176" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/simplelistitem.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/menu/main_menu.xml" value="0.25025641025641027" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/drawable/button.xml" value="0.22552083333333334" />

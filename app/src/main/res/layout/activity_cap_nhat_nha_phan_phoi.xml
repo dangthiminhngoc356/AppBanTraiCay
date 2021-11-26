@@ -93,42 +93,6 @@
                     android:minHeight="48dp" />
 
                 <EditText
-                    android:id="@+id/et_idsp2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    android:text="Name" />
-
-                <EditText
-                    android:id="@+id/et_date2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nhập ngày"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
-
-                <EditText
-                    android:id="@+id/et_soluong2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nhập số lượng"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
-
-                <EditText
-                    android:id="@+id/et_tensp2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    android:text="Name" />
-
-                <EditText
                     android:id="@+id/et_tennpp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

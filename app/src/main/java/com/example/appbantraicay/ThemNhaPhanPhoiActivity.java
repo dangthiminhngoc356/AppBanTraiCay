@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
 
-    EditText ID, DIACHI, EMAIL, SDT, SP1, NGAY, SOLUONG, SP2, NGAY2, SOLUONG2, TENSP, TENSP2, TENNPP;
+    EditText ID, DIACHI, EMAIL, SDT, SP1, NGAY, SOLUONG, TENSP, TENNPP;
 
     Button add, cancdel;
     int size;
@@ -48,20 +48,14 @@ public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
 
     private void matching() {
 
-        ID = (EditText) findViewById(R.id.et_tensp2);
+        ID = (EditText) findViewById(R.id.et_id);
         DIACHI = (EditText) findViewById(R.id.et_diachi);
         EMAIL = (EditText) findViewById(R.id.et_email);
         SDT = (EditText) findViewById(R.id.et_phone);
         SP1 = (EditText) findViewById(R.id.et_idsp1);
-        SOLUONG = (EditText) findViewById(R.id.et_soluong2);
+        SOLUONG = (EditText) findViewById(R.id.et_soluong);
         NGAY = (EditText) findViewById(R.id.et_date);
-        TENSP = (EditText) findViewById(R.id.et_tensp2);
-        SP2 = (EditText) findViewById(R.id.et_idsp1);
-        SOLUONG2 = (EditText) findViewById(R.id.et_soluong2);
-        NGAY2 = (EditText) findViewById(R.id.et_date2);
-        TENSP2 = (EditText) findViewById(R.id.et_tensp2);
-
-
+        TENSP = (EditText) findViewById(R.id.et_tensp1);
         TENNPP = (EditText) findViewById(R.id.et_tennpp);
         add = (Button) findViewById(R.id.btn_Add);
         cancdel = (Button) findViewById(R.id.btn_Cancel);
@@ -83,11 +77,6 @@ public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
             String ssoluong = SOLUONG.getText().toString();
             String stensp = TENSP.getText().toString();
 
-
-            String ssp2 = SP2.getText().toString();
-            String sngay2 = NGAY2.getText().toString();
-            String ssoluong2 = SOLUONG2.getText().toString();
-            String stensp2 = TENSP2.getText().toString();
             String stennpp = TENNPP.getText().toString();
 
             myRef.child(contactId).child("địa chỉ").setValue(saddress);
@@ -100,10 +89,7 @@ public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
             myRef.child(contactId).child("id").setValue(contactId);
 
 
-            myRef.child(contactId).child("sản phẩm 2").setValue(ssp2);
-            myRef.child(contactId).child("ngày sản phẩm 2").setValue(sngay2);
-            myRef.child(contactId).child("số lượng sản phẩm 2").setValue(ssoluong2);
-            myRef.child(contactId).child("tên sản phẩm 2").setValue(stensp2);
+
 
             myRef.child(contactId).child("tên nhà phân phối").setValue(stennpp);
 

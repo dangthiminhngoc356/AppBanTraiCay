@@ -24,8 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 public class second_main extends AppCompatActivity {
 
     ListView NhaPhanPhoi;
-
-
     ArrayAdapter<String> adapter;
     String TAG = "FIREBASE";
 
@@ -34,7 +32,6 @@ public class second_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_main);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-
         NhaPhanPhoi = findViewById(R.id.v_contact);
         NhaPhanPhoi.setAdapter(adapter);
 
@@ -89,7 +86,7 @@ public class second_main extends AppCompatActivity {
             intent.putExtra("ID", i_id);
             startActivity(intent);
         } else if (item.getItemId() == R.id.mnuGioiThieu) {
-            Toast.makeText(this, "Welcome to Nhà Phân Phối", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Welcome to App Bán Trái Cây", Toast.LENGTH_LONG).show();
 
         }
         return super.onOptionsItemSelected(item);
