@@ -7,6 +7,7 @@
     android:background="@drawable/backgroundqltk"
     tools:context=".AdminAccountActivity">
 
+
     <ImageView
         android:id="@+id/iv_themtk_hinhanh"
         android:layout_width="350dp"
@@ -18,11 +19,14 @@
         android:layout_marginTop="10dp"
         />
 
+
     <EditText
         android:id="@+id/et_addnewaccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_below="@+id/iv_themtk_hinhanh"
+
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
