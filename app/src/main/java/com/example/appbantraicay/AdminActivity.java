@@ -12,9 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AdminActivity extends AppCompatActivity {
     TextView tenadmin;
 
-    Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat,taikhoan;
-
-    Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat;
+    Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat, taikhoan;
 
     String loggedinusername;
 
