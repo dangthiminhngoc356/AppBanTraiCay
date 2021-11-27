@@ -75,7 +75,7 @@ public class Register extends AppCompatActivity {
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(!(snapshot.child("TaiKhoan").child(phone).exists())){
+                if(!(snapshot.child("Users").child(phone).exists())){
                     HashMap<String,Object>userdataMap= new HashMap<>();
                     userdataMap.put("phone",phone);
                     userdataMap.put("name",name);

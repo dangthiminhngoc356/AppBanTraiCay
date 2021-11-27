@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundqltk"
+    tools:context=".AdminAccountActivity">
+
+    <ImageView
+        android:id="@+id/iv_themtk_hinhanh"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/et_addnewaccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_themtk_hinhanh"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/inputs_design"
+        android:hint="Name"
+        android:inputType="textImeMultiLine"
+        android:padding="20dp" />
+    <EditText
+        android:id="@+id/et_password_themtk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_addnewaccount"
+        android:inputType="textImeMultiLine"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:hint="Password"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/inputs_design"
+        />
+    <EditText
+        android:id="@+id/et_phone_themtk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_password_themtk"
+        android:inputType="textImeMultiLine"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:hint="PhoneNumber"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/inputs_design"
+        />
+    <Button
+        android:id="@+id/btn_save_newaccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_phone_themtk"
+        android:text="Save"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:padding="17dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/buttons"
+        />
+    <Button
+        android:id="@+id/btn_cancel_newaccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_save_newaccount"
+        android:text="Cancel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:padding="17dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/buttons"
+        />
+
+
+    
+</RelativeLayout>

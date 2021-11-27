@@ -8,15 +8,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppBanTraiCay" >
+        android:theme="@style/Theme.AppBanTraiCay">
+      
         <activity
-            android:name=".UpdateOrderActivity"
+            android:name=".UpdateAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".AddOrderActivity"
+            android:name=".AdminAccountlistActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminOrderActivity"
+            android:name=".AdminAccountActivity"
             android:exported="false" />
         <activity
             android:name=".AdminProductsActivity"
@@ -27,6 +28,24 @@
         <activity
             android:name=".AddNewProductActivity"
             android:exported="true" />
+
+        android:theme="@style/Theme.AppBanTraiCay" >
+        <activity
+            android:name=".AddProductTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductTypeAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminOrderActivity"
+            android:exported="false" />
+
         <activity
             android:name=".CapNhatNhaPhanPhoiActivity"
             android:exported="true" />
@@ -36,6 +55,11 @@
         <activity
             android:name=".second_main"
             android:exported="true" />
+
+        <activity
+            android:name=".ConfirmFinalOrderActivity"
+            android:exported="false" />
+
         <activity
             android:name=".AdminActivity"
             android:exported="false" />
