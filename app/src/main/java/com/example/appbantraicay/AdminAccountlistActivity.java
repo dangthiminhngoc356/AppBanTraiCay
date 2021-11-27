@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.appbantraicay.ViewHolder.AdminAccountHodler;
-import com.example.appbantraicay.ViewHolder.SanphamViewHolder;
 import com.example.appbantraicay.model.Users;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -26,11 +25,11 @@ public class AdminAccountlistActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     Button themtk, home;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_accountlist);
-
         matching();
     }
 
@@ -39,21 +38,19 @@ public class AdminAccountlistActivity extends AppCompatActivity {
         super.onStart();
 
         FirebaseRecyclerOptions<Users>options= new FirebaseRecyclerOptions.Builder<Users>().setQuery(ref,Users.class).build();
-
-        FirebaseRecyclerAdapter<Users, AdminAccountHodler>adapter=
-                new FirebaseRecyclerAdapter<Users, AdminAccountHodler>(options) {
+        FirebaseRecyclerAdapter<Users, AdminAccountHodler> adapter = new FirebaseRecyclerAdapter<Users, AdminAccountHodler>(options) {
             @Override
             protected void onBindViewHolder(@NonNull AdminAccountHodler holder, int position, @NonNull Users model) {
                 holder.name.setText("name: " + model.getName());
                 holder.password.setText("password: " + model.getPassword());
                 holder.phone.setText("phone: " + model.getPhone());
-              //Picasso.get().load(model.getHinhAnh()).into(holder.hinhanh);
+                Picasso.get().load(model.gethinhanh()).into(holder.hinhanh);
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(AdminAccountlistActivity.this, UpdateAccountActivity.class);
-                     intent.putExtra("phone", model.getPhone());
+                        intent.putExtra("phone", model.getPhone());
                         startActivity(intent);
                     }
                 });
@@ -63,7 +60,7 @@ public class AdminAccountlistActivity extends AppCompatActivity {
             @Override
             public AdminAccountHodler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.account_admin_layout, parent, false);
-               AdminAccountHodler holder = new AdminAccountHodler(view);
+                AdminAccountHodler holder = new AdminAccountHodler(view);
                 return holder;
             }
         };
@@ -78,6 +75,7 @@ public class AdminAccountlistActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         home = (Button) findViewById(R.id.btn_account_menu);
+
         themtk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
