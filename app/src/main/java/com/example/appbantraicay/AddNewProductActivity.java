@@ -24,7 +24,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 import com.google.firebase.database.Query;
+
 
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -35,6 +37,10 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 import java.util.HashMap;
 
@@ -76,9 +82,13 @@ public class AddNewProductActivity extends AppCompatActivity {
                 input_mota = mota.getText().toString();
                 input_dongia = dongia.getText().toString().trim();
 
+
                 if(imageUri == null) {
 
                 if (imageUri == null) {
+
+
+                if(imageUri == null) {
 
                     Toast.makeText(AddNewProductActivity.this, "Vui lòng chọn hình ảnh", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(input_tensp)) {
@@ -125,9 +135,12 @@ public class AddNewProductActivity extends AppCompatActivity {
                             @Override
                             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
 
+
                                 if(!task.isSuccessful()) {
 
                                 if (!task.isSuccessful()) {
+
+                                if(!task.isSuccessful()) {
 
                                     throw task.getException();
                                 }
@@ -137,9 +150,13 @@ public class AddNewProductActivity extends AppCompatActivity {
                         }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                             @Override
                             public void onComplete(@NonNull Task<Uri> task) {
+
               if(task.isSuccessful()) {
 
                                 if (task.isSuccessful()) {
+
+
+                                if(task.isSuccessful()) {
 
                                     dowloadImage = task.getResult().toString();
                                     saveProduct();
@@ -168,9 +185,13 @@ public class AddNewProductActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
+
                 if(!task.isSuccessful()) {
 
                 if (!task.isSuccessful()) {
+
+
+                if(!task.isSuccessful()) {
 
                     Toast.makeText(AddNewProductActivity.this, "Thêm sản phẩm thất bại", Toast.LENGTH_LONG).show();
                 } else {
@@ -195,7 +216,9 @@ public class AddNewProductActivity extends AppCompatActivity {
 
         if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
 
+
         if (requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
+
 
             imageUri = data.getData();
             hinhanh.setImageURI(imageUri);

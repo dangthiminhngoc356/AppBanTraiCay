@@ -12,9 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AdminActivity extends AppCompatActivity {
     TextView tenadmin;
 
+
     Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat,taikhoan;
 
     Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat;
+
+    Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat, taikhoan;
+
 
     String loggedinusername;
 
@@ -51,11 +55,21 @@ public class AdminActivity extends AppCompatActivity {
                 Intent intent = new Intent(AdminActivity.this, AdminAccountlistActivity.class);
                 startActivity(intent);
 
+            }
+        });
+
         loaisp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminActivity.this, ProductTypeAdminActivity.class));
 
+            }
+        });
+
+        donhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, AdminOrderActivity.class));
             }
         });
     }

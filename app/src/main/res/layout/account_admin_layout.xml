@@ -8,10 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <ImageView
+            android:id="@+id/iv_admin_account_hinhanh"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop" />
+
         <TextView
             android:id="@+id/tv_admin_taikhoan_tentk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:layout_below="@+id/iv_admin_account_hinhanh"
+
             android:text="Name:"
             android:textColor="#000000"
             android:textSize="20dp" />
@@ -21,7 +31,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_admin_taikhoan_tentk"
+
             android:layout_marginTop="43dp"
+
+
             android:text="Password: "
             android:textColor="#000000"
             android:textSize="20dp" />
@@ -31,7 +44,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_admin_taikhoan_password"
+
             android:layout_marginTop="56dp"
+
             android:text="Phone: "
             android:textColor="#000000"
             android:textSize="20dp" />
