@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class second_main extends AppCompatActivity {
-    ListView contacts;
+    ListView NhaPhanPhoi;
     ArrayAdapter<String> adapter;
     String TAG = "FIREBASE";
     @Override
@@ -30,10 +30,10 @@ public class second_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_main);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-        contacts = findViewById(R.id.v_contact);
-        contacts.setAdapter(adapter);
+        NhaPhanPhoi = findViewById(R.id.v_NhaPhanPhoi);
+        NhaPhanPhoi.setAdapter(adapter);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference reference = database.getReference("contact");
+        DatabaseReference reference = database.getReference("NhaPhanPhoi");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -50,7 +50,7 @@ public class second_main extends AppCompatActivity {
                 Log.d(TAG, "loadPost:onCancelled", error.toException());
             }
         });
-        contacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        NhaPhanPhoi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String data = adapter.getItem(position);

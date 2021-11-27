@@ -11,15 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminActivity extends AppCompatActivity {
     TextView tenadmin;
-
-
     Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat,taikhoan;
-
-    Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat;
-
-    Button sanpham, donhang, nhaphanphoi, loaisp, admindangxuat, taikhoan;
-
-
     String loggedinusername;
 
     @Override
@@ -70,6 +62,12 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminActivity.this, AdminOrderActivity.class));
+            }
+        });
+        nhaphanphoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, ThemNhaPhanPhoiActivity.class));
             }
         });
     }

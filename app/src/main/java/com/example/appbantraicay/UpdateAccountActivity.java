@@ -35,20 +35,12 @@ public class UpdateAccountActivity extends AppCompatActivity {
 
     Button save, cancel, delete;
     EditText name, password, phone;
-
-//    ImageView hinhanh;
-//    Uri imageUri;
-    String dowloadImage, input_tentk, input_password, input_phone,idtk;
-    DatabaseReference Ref;
-//    private static final int GalleryPick = 1;
-//    private StorageReference productImageRef;
-
     ImageView hinhanh;
     Uri imageUri;
     String dowloadImage, input_tentk, input_password, input_phone,idtk;
     DatabaseReference Ref;
     private static final int GalleryPick = 1;
-    private StorageReference productImageRef;
+    private StorageReference accountImageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +50,12 @@ public class UpdateAccountActivity extends AppCompatActivity {
         matching();
         thongTinTaiKhoan();
 
-//        hinhanh.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                selectImage();
-//            }
-//        });
+        hinhanh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectImage();
+            }
+        });
 
         hinhanh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,11 +78,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
                 input_tentk = name.getText().toString();
                 input_password = password.getText().toString();
                 input_phone = phone.getText().toString().trim();
-
-//                if(imageUri == null) {
-//                    Toast.makeText(UpdateAccountActivity.this, "Vui lòng chọn hình ảnh", Toast.LENGTH_SHORT).show();
-             //   }
-                 if (TextUtils.isEmpty(input_tentk)) {
 
                 if(imageUri == null) {
                     Toast.makeText(UpdateAccountActivity.this, "Vui lòng chọn hình ảnh", Toast.LENGTH_SHORT).show();
@@ -116,11 +103,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
                         Intent intent = new Intent(UpdateAccountActivity.this, AdminAccountlistActivity.class);
                         startActivity(intent);
                         finish();
-
                         Toast.makeText(UpdateAccountActivity.this, "Xóa tài khoản thành công", Toast.LENGTH_SHORT).show();
-
-                        Toast.makeText(UpdateAccountActivity.this, "Xóa sản phẩm thành công", Toast.LENGTH_SHORT).show();
-
                     }
                 });
             }
@@ -135,20 +118,12 @@ public class UpdateAccountActivity extends AppCompatActivity {
                     String stentk = snapshot.child("name").getValue().toString();
                     String spassword = snapshot.child("password").getValue().toString();
                     String sphone= snapshot.child("phone").getValue().toString();
-
-                   // String shinhanh = snapshot.child("HinhAnh").getValue().toString();
-
-                    String shinhanh = snapshot.child("HinhAnh").getValue().toString();
-
+                    String shinhanh = snapshot.child("hinhanh").getValue().toString();
 
                     name.setText(stentk);
                     password.setText(spassword);
                     phone.setText(sphone);
-
-                   // Picasso.get().load(shinhanh).into(hinhanh);
-
                     Picasso.get().load(shinhanh).into(hinhanh);
-
                 }
             }
 
@@ -166,38 +141,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-               // StorageReference filePath = productImageRef.child(idtk + ".jpg");
-               // final UploadTask uploadTask = filePath.putFile(imageUri);
-//                uploadTask.addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(UpdateAccountActivity.this, "Lỗi: " + e.toString(), Toast.LENGTH_LONG).show();
-//                    }
-//                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                    @Override
-//                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                        Task<Uri> uriTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-//                            @Override
-//                            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-//                                if(!task.isSuccessful()) {
-//                                    throw task.getException();
-//                                }
-//                                dowloadImage = filePath.getDownloadUrl().toString();
-//                                return filePath.getDownloadUrl();
-//                            }
-//                        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<Uri> task) {
-//                                if(task.isSuccessful()) {
-//                                    dowloadImage = task.getResult().toString();
-//                                    saveAccount();
-//                                }
-//                            }
-//                        });
-//                    }
-//                });
-
-                StorageReference filePath = productImageRef.child(idtk + ".jpg");
+                StorageReference filePath = accountImageRef.child(idtk + ".jpg");
                 final UploadTask uploadTask = filePath.putFile(imageUri);
                 uploadTask.addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -241,41 +185,24 @@ public class UpdateAccountActivity extends AppCompatActivity {
     private void saveAccount() {
         HashMap<String, Object> map = new HashMap<>();
 
-        map.put("Ten", input_tentk);
-        map.put("DonGia", input_password);
-        map.put("MoTa", input_phone);
-
-     //   map.put("HinhAnh", dowloadImage);
-=======
-        map.put("HinhAnh", dowloadImage);
+        map.put("ten", input_tentk);
+        map.put("password", input_password);
+        map.put("phone", input_phone);
+        map.put("hinhanh", dowloadImage);
 
         Ref.updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(!task.isSuccessful()) {
-
                     Toast.makeText(UpdateAccountActivity.this, "Cập nhật tài khoản thất bại", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(UpdateAccountActivity.this, "Cập nhật tài khoản thành công", Toast.LENGTH_LONG).show();
-
-                    Toast.makeText(UpdateAccountActivity.this, "Cập nhật sản phẩm thất bại", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(UpdateAccountActivity.this, "Cập nhật sản phẩm thành công", Toast.LENGTH_LONG).show();
-
                     finish();
                 }
             }
         });
     }
 
-
-//    private void selectImage() {
-//        Intent intent = new Intent();
-//        intent.setAction(Intent.ACTION_GET_CONTENT);
-//       // intent.setType("image/*");
-//        //noinspection deprecation
-//        //startActivityForResult(intent, GalleryPick);
-//    }
 
     private void selectImage() {
         Intent intent = new Intent();
@@ -290,11 +217,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-//        if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
-//            imageUri = data.getData();
-//            hinhanh.setImageURI(imageUri);
-//        }
-
         if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
             imageUri = data.getData();
             hinhanh.setImageURI(imageUri);
@@ -304,24 +226,15 @@ public class UpdateAccountActivity extends AppCompatActivity {
 
     private void matching() {
         idtk = getIntent().getStringExtra("phone");
-
         Ref = FirebaseDatabase.getInstance().getReference().child("Users").child(idtk);
 
-        Ref = FirebaseDatabase.getInstance().getReference().child("SanPham").child(idtk);
-
-
-        save = (Button) findViewById(R.id.btn_updatesp_save);
-        cancel = (Button) findViewById(R.id.btn_updatesp_cancel);
-        delete = (Button) findViewById(R.id.btn_updatesp_delete);
-        name = (EditText) findViewById(R.id.et_updatesp_tensp);
-        password = (EditText) findViewById(R.id.et_updatesp_mota);
-        phone = (EditText) findViewById(R.id.et_updatesp_dongia);
-
-       // hinhanh = (ImageView) findViewById(R.id.iv_updatesp_hinhanh);
-       // productImageRef = FirebaseStorage.getInstance().getReference().child("Users");
-
-        hinhanh = (ImageView) findViewById(R.id.iv_updatesp_hinhanh);
-        productImageRef = FirebaseStorage.getInstance().getReference().child("sanpham");
-
+        save = (Button) findViewById(R.id.btn_updatetk_save);
+        cancel = (Button) findViewById(R.id.btn_updatetk_cancel);
+        delete = (Button) findViewById(R.id.btn_updatetk_delete);
+        name = (EditText) findViewById(R.id.et_updatetk_name);
+        password = (EditText) findViewById(R.id.et_updatetk_password);
+        phone = (EditText) findViewById(R.id.et_updatetk_phone);
+        hinhanh = (ImageView) findViewById(R.id.iv_updatetk_hinhanh);
+        accountImageRef = FirebaseStorage.getInstance().getReference().child("Users");
     }
 }

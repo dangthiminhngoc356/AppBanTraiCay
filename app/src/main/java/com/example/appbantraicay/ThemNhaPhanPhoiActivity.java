@@ -12,7 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
-    EditText DIACHI, EMAIL, SDT, NGAY, SOLUONG, TENSP, TENNPP;
+    EditText NPPID, DIACHI, EMAIL, SDT, NGAY, SOLUONG, TENSP, TENNPP;
     Button add, cancdel;
     int size;
     @Override
@@ -24,8 +24,8 @@ public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
             this.size = extras.getInt("size");
         }
         matching();
-        DIACHI.setEnabled(false);
-        DIACHI.setText(String.valueOf(size));
+        NPPID.setEnabled(false);
+        NPPID.setText(String.valueOf(size));
         cancdel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { finish();
@@ -40,6 +40,7 @@ public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
     }
 
     private void matching() {
+        NPPID = (EditText) findViewById(R.id.et_id);
         DIACHI = (EditText) findViewById(R.id.et_diachi);
         EMAIL = (EditText) findViewById(R.id.et_email);
         SDT = (EditText) findViewById(R.id.et_phone);
@@ -53,25 +54,28 @@ public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
     private void xulyThemMoi(){
         try {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference("contact");
-            DIACHI.setEnabled(false);
-            DIACHI.setText(String.valueOf(size));
-            String contactId = DIACHI.getText().toString();
+            DatabaseReference myRef = database.getReference("NhaPhanPhoi");
+            NPPID.setEnabled(false);
+            NPPID.setText(String.valueOf(size));
+            String NhaPhanPhoiId = NPPID.getText().toString();
+
+            String saddress = DIACHI.getText().toString();
             String semail = EMAIL.getText().toString();
             String sphone = SDT.getText().toString();
             String sngay = NGAY.getText().toString();
             String ssoluong = SOLUONG.getText().toString();
-
             String stensp = TENSP.getText().toString();
             String stennpp = TENNPP.getText().toString();
 
-            myRef.child(contactId).child("email").setValue(semail);
-            myRef.child(contactId).child("phone").setValue(sphone);
-            myRef.child(contactId).child("số lượng").setValue(ssoluong);
-            myRef.child(contactId).child("địa chỉ").setValue(contactId);
-            myRef.child(contactId).child("ngày").setValue(sngay);
-            myRef.child(contactId).child("tên sản phẩm").setValue(stensp);
-            myRef.child(contactId).child("tên nhà phân phối").setValue(stennpp);
+
+            myRef.child(NhaPhanPhoiId).child("DiaChi").setValue(saddress);
+            myRef.child(NhaPhanPhoiId).child("Email").setValue(semail);
+            myRef.child(NhaPhanPhoiId).child("SDT").setValue(sphone);
+            myRef.child(NhaPhanPhoiId).child("Ngay").setValue(sngay);
+            myRef.child(NhaPhanPhoiId).child("SoLuong").setValue(ssoluong);
+            myRef.child(NhaPhanPhoiId).child("TenSP").setValue(stensp);
+            myRef.child(NhaPhanPhoiId).child("NPP01").setValue(NhaPhanPhoiId);
+            myRef.child(NhaPhanPhoiId).child("TenNPP").setValue(stennpp);
 
             Toast.makeText(this, "Thêm liên kết thành công", Toast.LENGTH_LONG).show();
             finish();
