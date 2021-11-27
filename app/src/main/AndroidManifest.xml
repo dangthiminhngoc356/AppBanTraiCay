@@ -29,7 +29,6 @@
             android:name=".AddNewProductActivity"
             android:exported="true" />
 
-        android:theme="@style/Theme.AppBanTraiCay" >
         <activity
             android:name=".AddProductTypeActivity"
             android:exported="false" />
