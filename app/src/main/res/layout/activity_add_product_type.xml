@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#009688"
+    tools:context=".AddProductTypeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_add_save_productType"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttons"
+            android:text="lưu"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.835"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_name_productType6"
+            app:layout_constraintVertical_bias="0.336" />
+
+        <Button
+            android:id="@+id/btn_add_cancel_productType"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttons"
+            android:text="trở về"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.164"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_name_productType6"
+            app:layout_constraintVertical_bias="0.336" />
+
+        <TextView
+            android:id="@+id/tv_title_name_productType5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="______________________________________"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_name_productType4" />
+
+        <TextView
+            android:id="@+id/tv_title_name_productType6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:text="______________________________________"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_productTypeDescription" />
+
+        <TextView
+            android:id="@+id/tv_title_name_productType4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="THÊM LOẠI SẢN PHẨM"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_delete_product_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:text="Xóa loại sản phẩm"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_name_productType6"
+            app:layout_constraintVertical_bias="0.448" />
+
+        <EditText
+            android:id="@+id/et_productTypeName"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="100dp"
+            android:background="#90009688"
+            android:ems="10"
+            android:hint="Product Type Name"
+            android:inputType="textPersonName"
+            android:paddingStart="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_name_productType5" />
+
+        <EditText
+            android:id="@+id/et_productTypeDescription"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:background="#90009688"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="Product Type Description"
+            android:inputType="textMultiLine"
+            android:paddingStart="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_productTypeName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
