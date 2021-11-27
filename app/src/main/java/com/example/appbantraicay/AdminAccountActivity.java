@@ -30,11 +30,11 @@ import java.util.HashMap;
 
 public class AdminAccountActivity extends AppCompatActivity {
     Button savenewaccount,cancelnewaccount;
-    EditText name,password,phonenumber;
-    ImageView AccountImageView;
+    EditText name,password,phone;
+    //ImageView AccountImageView;
     ProgressDialog loadingBar;
-    Uri imageUri;
-    String downloadImage, input_tentk, input_password, input_phonenummber;
+   // Uri imageUri;
+    String downloadImage, input_tentk, input_password, input_phone;
     private static final int GalleryPick = 1;
     private StorageReference accountImageRef;
     private DatabaseReference  AccountRef;
@@ -46,12 +46,12 @@ public class AdminAccountActivity extends AppCompatActivity {
 
 
         matching();
-        AccountImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              openGalerry();
-            }
-        });
+//        AccountImageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//              openGalerry();
+//            }
+//        });
         savenewaccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,49 +70,49 @@ public class AdminAccountActivity extends AppCompatActivity {
 
 
     private void matching() {
-     accountImageRef= FirebaseStorage.getInstance().getReference().child("Account image");
+   //  accountImageRef= FirebaseStorage.getInstance().getReference().child("Account image");
      AccountRef = FirebaseDatabase.getInstance().getReference().child("Users");
      loadingBar=new ProgressDialog(this);
      cancelnewaccount= (Button) findViewById(R.id.btn_cancel_newaccount);
    savenewaccount =(Button) findViewById(R.id.btn_save_newaccount);
     name =(EditText) findViewById(R.id.et_addnewaccount);
     password =(EditText) findViewById(R.id.et_password_themtk);
-    phonenumber =(EditText) findViewById(R.id.et_phone_themtk);
-    AccountImageView =(ImageView) findViewById(R.id.iv_themtk_hinhanh);
+    phone =(EditText) findViewById(R.id.et_phone_themtk);
+   // AccountImageView =(ImageView) findViewById(R.id.iv_themtk_hinhanh);
 
     }
     private void openGalerry() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
+     //   intent.setType("image/*");
         //noinspection deprecation
-        startActivityForResult(intent, GalleryPick);
+      //  startActivityForResult(intent, GalleryPick);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
-            imageUri = data.getData();
-            AccountImageView.setImageURI(imageUri);
-        }
+//        if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
+//            imageUri = data.getData();
+//            AccountImageView.setImageURI(imageUri);
+//        }
     }
     private void ValidateAccount() {
         input_tentk=name.getText().toString();
         input_password=password.getText().toString();
-        input_phonenummber=phonenumber.getText().toString();
+        input_phone=phone.getText().toString();
 
 
-        if(imageUri==null){
-            Toast.makeText(this, "Account image is mandatory", Toast.LENGTH_SHORT).show();
-        }
-        else if(TextUtils.isEmpty(input_tentk)){
+//        if(imageUri==null){
+//            Toast.makeText(this, "Account image is mandatory", Toast.LENGTH_SHORT).show();
+//        }
+       if(TextUtils.isEmpty(input_tentk)){
             Toast.makeText(this, "Please write your name...", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(input_password)){
             Toast.makeText(this, "Please write your password...", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty( input_phonenummber)){
+        else if(TextUtils.isEmpty( input_phone)){
             Toast.makeText(this, "Please write your phonenumber...", Toast.LENGTH_SHORT).show();
         }
         else{
@@ -126,51 +126,51 @@ public class AdminAccountActivity extends AppCompatActivity {
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
 
-        StorageReference filepath= accountImageRef.child(imageUri.getLastPathSegment());
-        final UploadTask uploadTask = filepath.putFile(imageUri);
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                String message = e.toString();
-                Toast.makeText(AdminAccountActivity.this, "Error"+message, Toast.LENGTH_SHORT).show();
-                loadingBar.dismiss();
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(AdminAccountActivity.this, "Upload image successfully", Toast.LENGTH_SHORT).show();
-
-                Task<Uri> urlTask=uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                    @Override
-                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if(!task.isSuccessful()){
-                            throw task.getException();
-                        }
-                        downloadImage=filepath.getDownloadUrl().toString();
-                        return filepath.getDownloadUrl();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        if(task.isSuccessful()){
-                            downloadImage =task.getResult().toString();
-                            Toast.makeText(AdminAccountActivity.this, "Account image save to database successfully", Toast.LENGTH_SHORT).show();
-
-                            SaveAccountInformation();
-                        }
-                    }
-                });
-            }
-        });
+//        StorageReference filepath= accountImageRef.child(imageUri.getLastPathSegment());
+//        final UploadTask uploadTask = filepath.putFile(imageUri);
+//        uploadTask.addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                String message = e.toString();
+//                Toast.makeText(AdminAccountActivity.this, "Error"+message, Toast.LENGTH_SHORT).show();
+//                loadingBar.dismiss();
+//            }
+//        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//            @Override
+//            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                Toast.makeText(AdminAccountActivity.this, "Upload image successfully", Toast.LENGTH_SHORT).show();
+//
+//                Task<Uri> urlTask=uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+//                    @Override
+//                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+//                        if(!task.isSuccessful()){
+//                            throw task.getException();
+//                        }
+//                        downloadImage=filepath.getDownloadUrl().toString();
+//                        return filepath.getDownloadUrl();
+//                    }
+//                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Uri> task) {
+//                        if(task.isSuccessful()){
+//                            downloadImage =task.getResult().toString();
+//                            Toast.makeText(AdminAccountActivity.this, "Account image save to database successfully", Toast.LENGTH_SHORT).show();
+//
+//                            SaveAccountInformation();
+//                        }
+//                    }
+//                });
+//            }
+//        });
     }
 
     private void SaveAccountInformation() {
         HashMap<String,Object> accountMap=new HashMap<>();
        accountMap.put("name", input_tentk);
         accountMap.put("password", input_password);
-        accountMap.put("phonenumber", input_phonenummber);
+        accountMap.put("phone", input_phone);
 //        productMap.put("HinhAnh", dowloadImage);
-        AccountRef.child(input_phonenummber).updateChildren(accountMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        AccountRef.child(input_phone).updateChildren(accountMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
