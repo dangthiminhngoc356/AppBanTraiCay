@@ -33,7 +33,7 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-                DatabaseReference myRef = database.getReference("contact");
+                DatabaseReference myRef = database.getReference("NhaPhanPhoi");
 
                 String NhaPhanPhoiId = key;
 
@@ -61,7 +61,7 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("contact");
+                DatabaseReference myRef = database.getReference("NhaPhanPhoi");
 
                 myRef.child(key).removeValue();
                 finish();
@@ -76,7 +76,7 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        DatabaseReference myRef = database.getReference("contacts");
+        DatabaseReference myRef = database.getReference("NhaPhanPhoi");
 
         myRef.child(key).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -85,12 +85,12 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
                     HashMap<String, Object> hashMap = (HashMap<String, Object>) dataSnapshot.getValue();
                     NPPID.setText(key);
                     DIACHI.setText(hashMap.get("DiaChi").toString());
-                    EMAIL.setText(hashMap.get("email").toString());
-                    SDT.setText(hashMap.get("phone").toString());
-                    NGAY.setText(hashMap.get("ngày").toString());
-                    SOLUONG.setText(hashMap.get("số lượng").toString());
-                    TENSP.setText(hashMap.get("tên sản phẩm").toString());
-                    TENNPP.setText(hashMap.get("tên nhà phân phối").toString());
+                    EMAIL.setText(hashMap.get("Email").toString());
+                    SDT.setText(hashMap.get("SDT").toString());
+                    NGAY.setText(hashMap.get("Ngay").toString());
+                    SOLUONG.setText(hashMap.get("SoLuong").toString());
+                    TENSP.setText(hashMap.get("TenSP").toString());
+                    TENNPP.setText(hashMap.get("TenNPP").toString());
 
                 } catch (Exception e) {
                     Log.d("LOI_JSON", e.toString());

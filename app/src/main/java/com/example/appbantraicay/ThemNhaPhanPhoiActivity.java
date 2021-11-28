@@ -77,7 +77,7 @@ public class ThemNhaPhanPhoiActivity extends AppCompatActivity {
             myRef.child(NhaPhanPhoiId).child("NPP01").setValue(NhaPhanPhoiId);
             myRef.child(NhaPhanPhoiId).child("TenNPP").setValue(stennpp);
 
-            Toast.makeText(this, "Thêm liên kết thành công", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Thêm nhà phân phối thành công", Toast.LENGTH_LONG).show();
             finish();
         }catch (Exception e){
             Toast.makeText(this,"Error"+e.toString(),Toast.LENGTH_LONG);
