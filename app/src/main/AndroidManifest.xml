@@ -16,6 +16,7 @@
             android:name=".CapNhatNhaPhanPhoiActivity"
             android:exported="true"/>
         <activity
+
             android:name=".second_main"
             android:exported="true"/>
         <activity
@@ -34,6 +35,8 @@
             android:name=".UpdateProductActivity"
             android:exported="true" />
         <activity
+
+
             android:name=".AddNewProductActivity"
             android:exported="true" />
         <activity
