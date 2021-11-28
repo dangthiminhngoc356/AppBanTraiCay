@@ -37,6 +37,12 @@ public class AdminAccountActivity extends AppCompatActivity {
 
     Button save, cancel;
     EditText name, password, phone;
+
+    ProgressDialog loadingBar;
+    String input_tentk, input_password, input_phone;
+    DatabaseReference Ref = FirebaseDatabase.getInstance().getReference().child("Users");
+
+
     ImageView hinhanh;
     ProgressDialog loadingBar;
     Uri imageUri;
@@ -45,12 +51,25 @@ public class AdminAccountActivity extends AppCompatActivity {
     private static final int GalleryPick = 1;
     private StorageReference accountImageRef;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_account);
 
         matching();
+
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input_tentk = name.getText().toString();
+                input_password = password.getText().toString().trim();
+                input_phone = phone.getText().toString().trim();
+
+
+                    if(TextUtils.isEmpty(input_tentk)){
+
         hinhanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +89,7 @@ public class AdminAccountActivity extends AppCompatActivity {
                 }
                 else if(TextUtils.isEmpty(input_tentk)){
 
+
                     Toast.makeText(AdminAccountActivity.this, "Please write your name...", Toast.LENGTH_SHORT).show();
                 }
                 else if(TextUtils.isEmpty(input_password)){
@@ -79,9 +99,13 @@ public class AdminAccountActivity extends AppCompatActivity {
                 else if(TextUtils.isEmpty(input_phone)){
                     Toast.makeText(AdminAccountActivity.this, "Please write your phonenumber...", Toast.LENGTH_SHORT).show();
                 }
+
+               saveAccount();
+
                 else{
                     ValidateAccount();
                 }
+
             }
         });
 
@@ -96,82 +120,33 @@ public class AdminAccountActivity extends AppCompatActivity {
 
 
     private void matching() {
-     accountImageRef= FirebaseStorage.getInstance().getReference().child("hinhanh");
+
      loadingBar = new ProgressDialog(this);
      cancel= (Button) findViewById(R.id.btn_cancel_newaccount);
      save =(Button) findViewById(R.id.btn_save_newaccount);
      name =(EditText) findViewById(R.id.et_addnewaccount);
      password =(EditText) findViewById(R.id.et_password_themtk);
      phone =(EditText) findViewById(R.id.et_phone_themtk);
-     hinhanh =(ImageView) findViewById(R.id.iv_themtk_hinhanh);
+
     }
 
     private void selectImage() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-        //noinspection deprecation
-        startActivityForResult(intent, GalleryPick);
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
-            imageUri = data.getData();
-            hinhanh.setImageURI(imageUri);
-        }
-    }
 
-    private void ValidateAccount() {
-        Ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                StorageReference filePath = accountImageRef.child(input_phone + ".jpg");
-                final UploadTask uploadTask = filePath.putFile(imageUri);
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(AdminAccountActivity.this, "Lỗi: " + e.toString(), Toast.LENGTH_LONG).show();
-                    }
-                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Task<Uri> uriTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                            @Override
-                            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                                if(!task.isSuccessful()) {
-                                    throw task.getException();
-                                }
-                                dowloadImage = filePath.getDownloadUrl().toString();
-                                return filePath.getDownloadUrl();
-                            }
-                        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Uri> task) {
-                                if(task.isSuccessful()) {
-                                    dowloadImage = task.getResult().toString();
-                                    saveAccount();
-                                }
-                            }
-                        });
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 
     private void saveAccount() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("name", input_tentk);
         map.put("password", input_password);
         map.put("phone", input_phone);
-        map.put("hinhanh", dowloadImage);
+
         Ref.child(input_phone).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
