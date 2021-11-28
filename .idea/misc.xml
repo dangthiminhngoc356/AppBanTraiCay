@@ -4,6 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
 
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay14/app/src/main/res/layout/activity_add_new_product.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay14/app/src/main/res/layout/activity_add_order.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay14/app/src/main/res/layout/activity_admin_account.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay14/app/src/main/res/layout/activity_admin_accountlist.xml" value="0.20555555555555555" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay14/app/src/main/res/layout/activity_admin_order.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay14/app/src/main/res/layout/activity_admin_products.xml" value="0.20555555555555555" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay14/app/src/main/res/layout/activity_update_account.xml" value="0.25" />
+
+
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_cap_nhat_nha_phan_phoi.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_second_main.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_them_nha_phan_phoi.xml" value="0.12360688956433637" />
