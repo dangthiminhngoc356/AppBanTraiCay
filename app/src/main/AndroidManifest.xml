@@ -8,9 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
-
         android:theme="@style/Theme.AppBanTraiCay">
+        <activity
+            android:name=".ThemNhaPhanPhoiActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".CapNhatNhaPhanPhoiActivity"
+            android:exported="true"/>
+        <activity
+
+            android:name=".second_main"
+            android:exported="true"/>
         <activity
             android:name=".UpdateAccountActivity"
             android:exported="false" />
@@ -27,6 +35,8 @@
             android:name=".UpdateProductActivity"
             android:exported="true" />
         <activity
+
+
             android:name=".AddNewProductActivity"
             android:exported="true" />
         <activity
