@@ -64,6 +64,12 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(AdminActivity.this, AdminOrderActivity.class));
             }
         });
+        nhaphanphoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, second_main.class));
+            }
+        });
     }
 
     private void matching() {

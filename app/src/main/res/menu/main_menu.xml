@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/mnuAdd"
-        android:title="Them Contact" />
+        android:title="Thêm nhà phân phối" />
     <item
         android:id="@+id/mnuGioiThieu"
         android:title="Gioi Thieu" />

@@ -20,7 +20,7 @@ import java.util.HashMap;
 
 public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
     Button update, delete, cancel;
-    EditText DIACHI, EMAIL, SDT, NGAY, SOLUONG, TENSP, TENNPP;
+    EditText NPPID, DIACHI, EMAIL, SDT, NGAY, SOLUONG, TENSP, TENNPP;
     String key;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,24 +33,27 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-                DatabaseReference myRef = database.getReference("contact");
+                DatabaseReference myRef = database.getReference("NhaPhanPhoi");
 
-                String contactId = key;
+                String NhaPhanPhoiId = key;
 
+                String saddress = DIACHI.getText().toString();
                 String semail = EMAIL.getText().toString();
                 String sphone = SDT.getText().toString();
-                String ssoluong = SOLUONG.getText().toString();
                 String sngay = NGAY.getText().toString();
+                String ssoluong = SOLUONG.getText().toString();
                 String stensp = TENSP.getText().toString();
                 String stennpp = TENNPP.getText().toString();
 
-                myRef.child(contactId).child("email").setValue(semail);
-                myRef.child(contactId).child("phone").setValue(sphone);
-                myRef.child(contactId).child("số lượng").setValue(ssoluong);
-                myRef.child(contactId).child("địa chỉ").setValue(contactId);
-                myRef.child(contactId).child("ngày").setValue(sngay);
-                myRef.child(contactId).child("tên sản phẩm").setValue(stensp);
-                myRef.child(contactId).child("tên nhà phân phối").setValue(stennpp);
+
+                myRef.child(NhaPhanPhoiId).child("DiaChi").setValue(saddress);
+                myRef.child(NhaPhanPhoiId).child("Email").setValue(semail);
+                myRef.child(NhaPhanPhoiId).child("SDT").setValue(sphone);
+                myRef.child(NhaPhanPhoiId).child("Ngay").setValue(sngay);
+                myRef.child(NhaPhanPhoiId).child("SoLuong").setValue(ssoluong);
+                myRef.child(NhaPhanPhoiId).child("TenSP").setValue(stensp);
+                myRef.child(NhaPhanPhoiId).child("NPP01").setValue(NhaPhanPhoiId);
+                myRef.child(NhaPhanPhoiId).child("TenNPP").setValue(stennpp);
                 finish();
             }
         });
@@ -58,7 +61,7 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("contact");
+                DatabaseReference myRef = database.getReference("NhaPhanPhoi");
 
                 myRef.child(key).removeValue();
                 finish();
@@ -73,20 +76,21 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        DatabaseReference myRef = database.getReference("contacts");
+        DatabaseReference myRef = database.getReference("NhaPhanPhoi");
 
         myRef.child(key).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 try {
                     HashMap<String, Object> hashMap = (HashMap<String, Object>) dataSnapshot.getValue();
-                    DIACHI.setText(key);
-                    EMAIL.setText(hashMap.get("email").toString());
-                    SDT.setText(hashMap.get("phone").toString());
-                    NGAY.setText(hashMap.get("ngày").toString());
-                    SOLUONG.setText(hashMap.get("số lượng").toString());
-                    TENSP.setText(hashMap.get("tên sản phẩm").toString());
-                    TENNPP.setText(hashMap.get("tên nhà phân phối").toString());
+                    NPPID.setText(key);
+                    DIACHI.setText(hashMap.get("DiaChi").toString());
+                    EMAIL.setText(hashMap.get("Email").toString());
+                    SDT.setText(hashMap.get("SDT").toString());
+                    NGAY.setText(hashMap.get("Ngay").toString());
+                    SOLUONG.setText(hashMap.get("SoLuong").toString());
+                    TENSP.setText(hashMap.get("TenSP").toString());
+                    TENNPP.setText(hashMap.get("TenNPP").toString());
 
                 } catch (Exception e) {
                     Log.d("LOI_JSON", e.toString());
@@ -101,6 +105,7 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
     }
 
     private void matching() {
+        NPPID = (EditText) findViewById(R.id.et_id);
         DIACHI = (EditText) findViewById(R.id.et_diachi);
         EMAIL = (EditText) findViewById(R.id.et_email);
         SDT = (EditText) findViewById(R.id.et_phone);
