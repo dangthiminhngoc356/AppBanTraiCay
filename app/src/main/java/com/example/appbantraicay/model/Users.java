@@ -1,7 +1,11 @@
 package com.example.appbantraicay.model;
 
 public class Users {
+
     private String name, password, phone;
+
+  
+
 
     public Users(){
 
@@ -11,7 +15,6 @@ public class Users {
         this.name = name;
         this.password = password;
         this.phone = phone;
-
     }
 
     public String getName() {
@@ -37,5 +40,4 @@ public class Users {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
 }

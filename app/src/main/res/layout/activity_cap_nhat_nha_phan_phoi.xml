@@ -32,12 +32,23 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/et_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập id"
+                android:inputType="textPersonName"
+                android:minHeight="32dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <EditText
                 android:id="@+id/et_diachi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Nhập ID"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
 
             <EditText
                 android:id="@+id/et_email"
