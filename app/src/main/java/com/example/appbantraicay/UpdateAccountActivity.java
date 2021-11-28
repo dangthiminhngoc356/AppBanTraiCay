@@ -35,12 +35,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
 
     Button save, cancel, delete;
     EditText name, password, phone;
-    ImageView hinhanh;
-    Uri imageUri;
-    String dowloadImage, input_tentk, input_password, input_phone,idtk;
+    String input_tentk, input_password, input_phone,idtk;
     DatabaseReference Ref;
-    private static final int GalleryPick = 1;
-    private StorageReference accountImageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,19 +46,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
         matching();
         thongTinTaiKhoan();
 
-        hinhanh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectImage();
-            }
-        });
-
-        hinhanh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectImage();
-            }
-        });
 
 
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -79,18 +62,15 @@ public class UpdateAccountActivity extends AppCompatActivity {
                 input_password = password.getText().toString();
                 input_phone = phone.getText().toString().trim();
 
-                if(imageUri == null) {
-                    Toast.makeText(UpdateAccountActivity.this, "Vui lòng chọn hình ảnh", Toast.LENGTH_SHORT).show();
-                } else if (TextUtils.isEmpty(input_tentk)) {
+                if (TextUtils.isEmpty(input_tentk)) {
 
                     Toast.makeText(UpdateAccountActivity.this, "Vui lòng nhập tên ", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(input_password)) {
                     Toast.makeText(UpdateAccountActivity.this, "Vui lòng nhập password", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty( input_phone)) {
                     Toast.makeText(UpdateAccountActivity.this, "Vui lòng nhập số điện thoai", Toast.LENGTH_SHORT).show();
-                } else {
-                    validateProduct();
                 }
+                saveAccount();
             }
         });
 
@@ -118,12 +98,12 @@ public class UpdateAccountActivity extends AppCompatActivity {
                     String stentk = snapshot.child("name").getValue().toString();
                     String spassword = snapshot.child("password").getValue().toString();
                     String sphone= snapshot.child("phone").getValue().toString();
-                    String shinhanh = snapshot.child("hinhanh").getValue().toString();
+
 
                     name.setText(stentk);
                     password.setText(spassword);
                     phone.setText(sphone);
-                    Picasso.get().load(shinhanh).into(hinhanh);
+
                 }
             }
 
@@ -134,52 +114,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
         });
     }
 
-    private void validateProduct() {
-
-
-        Ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                StorageReference filePath = accountImageRef.child(idtk + ".jpg");
-                final UploadTask uploadTask = filePath.putFile(imageUri);
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(UpdateAccountActivity.this, "Lỗi: " + e.toString(), Toast.LENGTH_LONG).show();
-                    }
-                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Task<Uri> uriTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                            @Override
-                            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                                if(!task.isSuccessful()) {
-                                    throw task.getException();
-                                }
-                                dowloadImage = filePath.getDownloadUrl().toString();
-                                return filePath.getDownloadUrl();
-                            }
-                        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Uri> task) {
-                                if(task.isSuccessful()) {
-                                    dowloadImage = task.getResult().toString();
-                                    saveAccount();
-                                }
-                            }
-                        });
-                    }
-                });
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 
 
     private void saveAccount() {
@@ -188,7 +122,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
         map.put("ten", input_tentk);
         map.put("password", input_password);
         map.put("phone", input_phone);
-        map.put("hinhanh", dowloadImage);
+
 
         Ref.updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -207,9 +141,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
     private void selectImage() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-        //noinspection deprecation
-        startActivityForResult(intent, GalleryPick);
     }
 
 
@@ -217,10 +148,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
-            imageUri = data.getData();
-            hinhanh.setImageURI(imageUri);
-        }
+
 
     }
 
@@ -234,7 +162,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
         name = (EditText) findViewById(R.id.et_updatetk_name);
         password = (EditText) findViewById(R.id.et_updatetk_password);
         phone = (EditText) findViewById(R.id.et_updatetk_phone);
-        hinhanh = (ImageView) findViewById(R.id.iv_updatetk_hinhanh);
-        accountImageRef = FirebaseStorage.getInstance().getReference().child("Users");
+
     }
 }

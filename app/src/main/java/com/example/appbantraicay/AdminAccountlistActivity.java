@@ -44,7 +44,6 @@ public class AdminAccountlistActivity extends AppCompatActivity {
                 holder.name.setText("name: " + model.getName());
                 holder.password.setText("password: " + model.getPassword());
                 holder.phone.setText("phone: " + model.getPhone());
-                Picasso.get().load(model.gethinhanh()).into(holder.hinhanh);
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
