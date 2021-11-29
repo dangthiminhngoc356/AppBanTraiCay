@@ -67,7 +67,7 @@ public class AdminActivity extends AppCompatActivity {
         nhaphanphoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminActivity.this, ThemNhaPhanPhoiActivity.class));
+                startActivity(new Intent(AdminActivity.this, second_main.class));
             }
         });
     }

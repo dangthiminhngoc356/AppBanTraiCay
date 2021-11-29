@@ -37,9 +37,19 @@ public class AdminAccountActivity extends AppCompatActivity {
 
     Button save, cancel;
     EditText name, password, phone;
+
+
     ProgressDialog loadingBar;
     String input_tentk, input_password, input_phone;
     DatabaseReference Ref = FirebaseDatabase.getInstance().getReference().child("Users");
+
+
+    ImageView hinhanh;
+
+    ProgressDialog loadingBar;
+    String input_tentk, input_password, input_phone;
+    DatabaseReference Ref = FirebaseDatabase.getInstance().getReference().child("Users");
+
 
 
     @Override
@@ -48,6 +58,26 @@ public class AdminAccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_account);
 
         matching();
+
+
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input_tentk = name.getText().toString();
+                input_password = password.getText().toString().trim();
+                input_phone = phone.getText().toString().trim();
+
+
+                    if(TextUtils.isEmpty(input_tentk)){
+
+        hinhanh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectImage();
+            }
+        });
+
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +89,7 @@ public class AdminAccountActivity extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(input_tentk)){
 
+
                     Toast.makeText(AdminAccountActivity.this, "Please write your name...", Toast.LENGTH_SHORT).show();
                 }
                 else if(TextUtils.isEmpty(input_password)){
@@ -68,7 +99,17 @@ public class AdminAccountActivity extends AppCompatActivity {
                 else if(TextUtils.isEmpty(input_phone)){
                     Toast.makeText(AdminAccountActivity.this, "Please write your phonenumber...", Toast.LENGTH_SHORT).show();
                 }
+
                 saveAccount();
+
+
+               saveAccount();
+
+                else{
+                    ValidateAccount();
+                }
+
+
             }
         });
 
@@ -90,6 +131,15 @@ public class AdminAccountActivity extends AppCompatActivity {
         name =(EditText) findViewById(R.id.et_addnewaccount);
         password =(EditText) findViewById(R.id.et_password_themtk);
         phone =(EditText) findViewById(R.id.et_phone_themtk);
+
+     loadingBar = new ProgressDialog(this);
+     cancel= (Button) findViewById(R.id.btn_cancel_newaccount);
+     save =(Button) findViewById(R.id.btn_save_newaccount);
+     name =(EditText) findViewById(R.id.et_addnewaccount);
+     password =(EditText) findViewById(R.id.et_password_themtk);
+     phone =(EditText) findViewById(R.id.et_phone_themtk);
+
+
     }
 
     private void selectImage() {
@@ -105,11 +155,13 @@ public class AdminAccountActivity extends AppCompatActivity {
     }
 
 
+
     private void saveAccount() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("name", input_tentk);
         map.put("password", input_password);
         map.put("phone", input_phone);
+
         Ref.child(input_phone).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

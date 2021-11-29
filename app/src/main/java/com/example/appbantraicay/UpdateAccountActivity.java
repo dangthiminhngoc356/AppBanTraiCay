@@ -35,8 +35,16 @@ public class UpdateAccountActivity extends AppCompatActivity {
 
     Button save, cancel, delete;
     EditText name, password, phone;
+
     String input_tentk, input_password, input_phone,idtk;
     DatabaseReference Ref;
+
+
+    String input_tentk, input_password, input_phone,idtk;
+    DatabaseReference Ref;
+    String dowloadImage, input_tentk, input_password, input_phone,idtk;
+    DatabaseReference Ref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
 
         matching();
         thongTinTaiKhoan();
+
 
 
 
@@ -62,8 +71,10 @@ public class UpdateAccountActivity extends AppCompatActivity {
                 input_password = password.getText().toString();
                 input_phone = phone.getText().toString().trim();
 
+
                 if (TextUtils.isEmpty(input_tentk)) {
 
+            if (TextUtils.isEmpty(input_tentk)) {
                     Toast.makeText(UpdateAccountActivity.this, "Vui lòng nhập tên ", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(input_password)) {
                     Toast.makeText(UpdateAccountActivity.this, "Vui lòng nhập password", Toast.LENGTH_SHORT).show();
@@ -147,7 +158,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
 
 
     }
