@@ -35,12 +35,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
 
     Button save, cancel, delete;
     EditText name, password, phone;
-
     String input_tentk, input_password, input_phone,idtk;
     DatabaseReference Ref;
-    String dowloadImage, input_tentk, input_password, input_phone,idtk;
-    DatabaseReference Ref;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +45,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
 
         matching();
         thongTinTaiKhoan();
-
 
 
 
@@ -67,8 +62,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
                 input_password = password.getText().toString();
                 input_phone = phone.getText().toString().trim();
 
+                if (TextUtils.isEmpty(input_tentk)) {
 
-            if (TextUtils.isEmpty(input_tentk)) {
                     Toast.makeText(UpdateAccountActivity.this, "Vui lòng nhập tên ", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(input_password)) {
                     Toast.makeText(UpdateAccountActivity.this, "Vui lòng nhập password", Toast.LENGTH_SHORT).show();
@@ -104,9 +99,11 @@ public class UpdateAccountActivity extends AppCompatActivity {
                     String spassword = snapshot.child("password").getValue().toString();
                     String sphone= snapshot.child("phone").getValue().toString();
 
+
                     name.setText(stentk);
                     password.setText(spassword);
                     phone.setText(sphone);
+
                 }
             }
 
@@ -118,12 +115,14 @@ public class UpdateAccountActivity extends AppCompatActivity {
     }
 
 
+
     private void saveAccount() {
         HashMap<String, Object> map = new HashMap<>();
 
         map.put("ten", input_tentk);
         map.put("password", input_password);
         map.put("phone", input_phone);
+
 
         Ref.updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -149,6 +148,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+
+
     }
 
     private void matching() {
@@ -161,5 +162,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
         name = (EditText) findViewById(R.id.et_updatetk_name);
         password = (EditText) findViewById(R.id.et_updatetk_password);
         phone = (EditText) findViewById(R.id.et_updatetk_phone);
+
     }
 }

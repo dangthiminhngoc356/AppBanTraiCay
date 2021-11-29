@@ -37,19 +37,9 @@ public class AdminAccountActivity extends AppCompatActivity {
 
     Button save, cancel;
     EditText name, password, phone;
-
     ProgressDialog loadingBar;
     String input_tentk, input_password, input_phone;
     DatabaseReference Ref = FirebaseDatabase.getInstance().getReference().child("Users");
-
-
-    ImageView hinhanh;
-    ProgressDialog loadingBar;
-    Uri imageUri;
-    String dowloadImage, input_tentk, input_password, input_phone;
-    DatabaseReference Ref = FirebaseDatabase.getInstance().getReference().child("Users");
-    private static final int GalleryPick = 1;
-    private StorageReference accountImageRef;
 
 
     @Override
@@ -59,7 +49,6 @@ public class AdminAccountActivity extends AppCompatActivity {
 
         matching();
 
-
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,27 +57,7 @@ public class AdminAccountActivity extends AppCompatActivity {
                 input_phone = phone.getText().toString().trim();
 
 
-                    if(TextUtils.isEmpty(input_tentk)){
-
-        hinhanh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectImage();
-            }
-        });
-
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                input_tentk = name.getText().toString();
-                input_password = password.getText().toString().trim();
-                input_phone = phone.getText().toString().trim();
-
-                if(imageUri==null){
-                    Toast.makeText(AdminAccountActivity.this, "Account image is mandatory", Toast.LENGTH_SHORT).show();
-                }
-                else if(TextUtils.isEmpty(input_tentk)){
-
+                if(TextUtils.isEmpty(input_tentk)){
 
                     Toast.makeText(AdminAccountActivity.this, "Please write your name...", Toast.LENGTH_SHORT).show();
                 }
@@ -99,13 +68,7 @@ public class AdminAccountActivity extends AppCompatActivity {
                 else if(TextUtils.isEmpty(input_phone)){
                     Toast.makeText(AdminAccountActivity.this, "Please write your phonenumber...", Toast.LENGTH_SHORT).show();
                 }
-
-               saveAccount();
-
-                else{
-                    ValidateAccount();
-                }
-
+                saveAccount();
             }
         });
 
@@ -121,13 +84,12 @@ public class AdminAccountActivity extends AppCompatActivity {
 
     private void matching() {
 
-     loadingBar = new ProgressDialog(this);
-     cancel= (Button) findViewById(R.id.btn_cancel_newaccount);
-     save =(Button) findViewById(R.id.btn_save_newaccount);
-     name =(EditText) findViewById(R.id.et_addnewaccount);
-     password =(EditText) findViewById(R.id.et_password_themtk);
-     phone =(EditText) findViewById(R.id.et_phone_themtk);
-
+        loadingBar = new ProgressDialog(this);
+        cancel= (Button) findViewById(R.id.btn_cancel_newaccount);
+        save =(Button) findViewById(R.id.btn_save_newaccount);
+        name =(EditText) findViewById(R.id.et_addnewaccount);
+        password =(EditText) findViewById(R.id.et_password_themtk);
+        phone =(EditText) findViewById(R.id.et_phone_themtk);
     }
 
     private void selectImage() {
@@ -140,13 +102,14 @@ public class AdminAccountActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+    }
+
 
     private void saveAccount() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("name", input_tentk);
         map.put("password", input_password);
         map.put("phone", input_phone);
-
         Ref.child(input_phone).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

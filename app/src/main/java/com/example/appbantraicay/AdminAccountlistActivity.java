@@ -45,7 +45,6 @@ public class AdminAccountlistActivity extends AppCompatActivity {
                 holder.password.setText("password: " + model.getPassword());
                 holder.phone.setText("phone: " + model.getPhone());
 
-
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
