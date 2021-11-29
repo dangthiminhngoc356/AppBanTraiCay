@@ -3,114 +3,133 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ThemNhaPhanPhoiActivity">
+    android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="THÊM NHÀ PHÂN PHỐI"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Nhập ID"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck">
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+    <EditText
+        android:id="@+id/et_diachi"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Nhập địa chỉ"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_id" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Nhập email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_diachi" />
 
-        <EditText
-            android:id="@+id/et_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập id"
-            android:inputType="textPersonName"
-            android:minHeight="32dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Nhập sdt"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
-        <EditText
-            android:id="@+id/et_diachi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập địa chỉ"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Nhập ngày"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
 
-        <EditText
-            android:id="@+id/et_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập email"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+    <EditText
+        android:id="@+id/et_soluong"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Nhập số lượng"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_date" />
 
-        <EditText
-            android:id="@+id/et_phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập sdt"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+    <EditText
+        android:id="@+id/et_tensp"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Nhập tên sản phẩm"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_soluong"
+        tools:ignore="DuplicateClickableBoundsCheck" />
 
-        <EditText
-            android:id="@+id/et_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập ngày"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+    <EditText
+        android:id="@+id/et_tennpp"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Nhập tên tên phân phối"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_tensp" />
 
-        <EditText
-            android:id="@+id/et_soluong"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập số lượng"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+    <Button
+        android:id="@+id/btn_themnhaphanphoi_luu"
+        android:layout_width="135dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="108dp"
+        android:text="Lưu"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
-        <EditText
-            android:id="@+id/et_tensp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nhập tên sp"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/et_tennpp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Office phone"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
-
-        <Button
-            android:id="@+id/btn_Add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="THÊM" />
-
-        <Button
-            android:id="@+id/btn_Cancel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="HỦY" />
-
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/btn_themnhaphanphoi_xoa"
+        android:layout_width="135dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="108dp"
+        android:text="Hủy"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
