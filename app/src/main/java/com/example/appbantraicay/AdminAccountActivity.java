@@ -48,7 +48,6 @@ public class AdminAccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_account);
 
         matching();
-
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,11 +89,13 @@ public class AdminAccountActivity extends AppCompatActivity {
         name =(EditText) findViewById(R.id.et_addnewaccount);
         password =(EditText) findViewById(R.id.et_password_themtk);
         phone =(EditText) findViewById(R.id.et_phone_themtk);
-    }
 
-    private void selectImage() {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_GET_CONTENT);
+     loadingBar = new ProgressDialog(this);
+     cancel= (Button) findViewById(R.id.btn_cancel_newaccount);
+     save =(Button) findViewById(R.id.btn_save_newaccount);
+     name =(EditText) findViewById(R.id.et_addnewaccount);
+     password =(EditText) findViewById(R.id.et_password_themtk);
+     phone =(EditText) findViewById(R.id.et_phone_themtk);
 
     }
 
@@ -103,7 +104,6 @@ public class AdminAccountActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
     }
-
 
     private void saveAccount() {
         HashMap<String, Object> map = new HashMap<>();

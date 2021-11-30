@@ -137,21 +137,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
         });
     }
 
-
-    private void selectImage() {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-
-
-    }
-
     private void matching() {
         idtk = getIntent().getStringExtra("phone");
         Ref = FirebaseDatabase.getInstance().getReference().child("Users").child(idtk);
