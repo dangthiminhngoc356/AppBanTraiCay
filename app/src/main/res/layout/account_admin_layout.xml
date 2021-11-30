@@ -2,23 +2,21 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundqltk"
+        >
 
-        <ImageView
-            android:id="@+id/iv_admin_account_hinhanh"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop" />
+
 
         <TextView
             android:id="@+id/tv_admin_taikhoan_tentk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_admin_account_hinhanh"
             android:text="Name: "
             android:textColor="#000000"
             android:textSize="20dp" />

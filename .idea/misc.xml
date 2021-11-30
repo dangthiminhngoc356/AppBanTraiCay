@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
 
+
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_cap_nhat_nha_phan_phoi.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_second_main.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/AppBanTraiCay/app/src/main/res/layout/activity_them_nha_phan_phoi.xml" value="0.12360688956433637" />
@@ -28,8 +29,29 @@
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay2/app/src/main/res/layout/activity_register.xml" value="0.33" />
+
         <entry key="..\:/laptrinhMobile/AppBanTraiCay20/app/src/main/res/layout/activity_admin_account.xml" value="0.209375" />
         <entry key="..\:/laptrinhMobile/AppBanTraiCay20/app/src/main/res/layout/activity_admin_accountlist.xml" value="0.209375" />
+
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/account_admin_layout.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_add_new_product.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_add_order.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_add_product_type.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_admin.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_admin_account.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_admin_accountlist.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_admin_order.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_admin_products.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_confirm_final_order.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_update_account.xml" value="0.22" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_update_order.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/activity_update_product.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/list_product_type_viewholder.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/nhaphanphoi_admin.xml" value="0.209375" />
+        <entry key="..\:/laptrinhMobile/AppBanTraiCay25/app/src/main/res/layout/order_admin.xml" value="0.209375" />
+
       </map>
     </option>
   </component>
