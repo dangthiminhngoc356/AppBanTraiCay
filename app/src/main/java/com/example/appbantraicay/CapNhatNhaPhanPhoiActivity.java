@@ -45,7 +45,7 @@ public class CapNhatNhaPhanPhoiActivity extends AppCompatActivity {
                 Ref.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Intent intent = new Intent(CapNhatNhaPhanPhoiActivity.this, MainActivity.class);
+                        Intent intent = new Intent(CapNhatNhaPhanPhoiActivity.this, second_main.class);
                         startActivity(intent);
                         finish();
                         Toast.makeText(CapNhatNhaPhanPhoiActivity.this, "Xóa thành công", Toast.LENGTH_SHORT).show();
