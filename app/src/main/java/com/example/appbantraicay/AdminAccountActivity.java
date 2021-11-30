@@ -1,36 +1,23 @@
 package com.example.appbantraicay;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.Continuation;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.HashMap;
 
 public class AdminAccountActivity extends AppCompatActivity {
@@ -48,14 +35,12 @@ public class AdminAccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_account);
 
         matching();
-
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 input_tentk = name.getText().toString();
                 input_password = password.getText().toString().trim();
                 input_phone = phone.getText().toString().trim();
-
 
                 if(TextUtils.isEmpty(input_tentk)){
 
@@ -90,11 +75,6 @@ public class AdminAccountActivity extends AppCompatActivity {
         name =(EditText) findViewById(R.id.et_addnewaccount);
         password =(EditText) findViewById(R.id.et_password_themtk);
         phone =(EditText) findViewById(R.id.et_phone_themtk);
-    }
-
-    private void selectImage() {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_GET_CONTENT);
 
     }
 
@@ -103,7 +83,6 @@ public class AdminAccountActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
     }
-
 
     private void saveAccount() {
         HashMap<String, Object> map = new HashMap<>();
