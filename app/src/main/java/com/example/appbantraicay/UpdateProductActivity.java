@@ -69,6 +69,7 @@ public class UpdateProductActivity extends AppCompatActivity {
                 input_tensp = tensp.getText().toString();
                 input_mota = mota.getText().toString();
                 input_dongia = dongia.getText().toString().trim();
+
                 if(imageUri == null) {
                     saveProduct1();
                 } else {
@@ -129,6 +130,7 @@ public class UpdateProductActivity extends AppCompatActivity {
         Ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 StorageReference filePath = productImageRef.child(idsp + ".jpg");
                 final UploadTask uploadTask = filePath.putFile(imageUri);
                 uploadTask.addOnFailureListener(new OnFailureListener() {

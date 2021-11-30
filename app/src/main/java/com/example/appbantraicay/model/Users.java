@@ -1,7 +1,11 @@
 package com.example.appbantraicay.model;
 
 public class Users {
-    private String name,password,phone;
+
+    private String name, password, phone;
+
+  
+
 
     public Users(){
 

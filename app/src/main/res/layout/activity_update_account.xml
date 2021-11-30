@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundqltk"
     tools:context=".UpdateAccountActivity">
+
     <Button
         android:id="@+id/btn_updatetk_cancel"
         android:layout_width="106dp"
         android:layout_height="51dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="152dp"
         android:backgroundTint="#E91E63"
         android:foregroundTint="#4CAF50"
@@ -24,8 +26,8 @@
         android:id="@+id/btn_updatetk_delete"
         android:layout_width="106dp"
         android:layout_height="51dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="36dp"
         android:backgroundTint="#3F51B5"
         android:foregroundTint="#4CAF50"
         android:text="Delete"
@@ -36,24 +38,34 @@
         app:layout_constraintTop_toBottomOf="@+id/et_updatetk_phone"
         tools:ignore="UnknownId" />
 
+
     <Button
         android:id="@+id/btn_updatetk_save"
         android:layout_width="106dp"
         android:layout_height="51dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
         android:backgroundTint="#4CAF50"
         android:foregroundTint="#4CAF50"
         android:text="Save"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_updatetk_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/et_updatetk_phone" /><![CDATA[
+
+
+
+
+    app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_updatetk_hinhanh" />
+
+
+    ]]>
 
     <EditText
         android:id="@+id/et_updatetk_phone"
         android:layout_width="365dp"
         android:layout_height="58dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Phone"
         android:inputType="textPersonName"
@@ -65,7 +77,7 @@
         android:id="@+id/et_updatetk_password"
         android:layout_width="365dp"
         android:layout_height="58dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
@@ -77,34 +89,30 @@
         android:id="@+id/et_updatetk_name"
         android:layout_width="365dp"
         android:layout_height="58dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="144dp"
+
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/tv_account" />
+
         app:layout_constraintTop_toBottomOf="@+id/iv_updatetk_hinhanh" />
+
 
     <TextView
         android:id="@+id/tv_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:text="UPDATE Tài Khoản"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_updatetk_hinhanh"
-        android:layout_width="175dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_account"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

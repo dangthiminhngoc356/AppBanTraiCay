@@ -23,7 +23,6 @@ public class SanphamViewHolder extends RecyclerView.ViewHolder implements View.O
         tensp = (TextView) itemView.findViewById(R.id.txt_admin_sanpham_tensp);
         mota = (TextView) itemView.findViewById(R.id.txt_admin_sanpham_mota);
         dongia = (TextView) itemView.findViewById(R.id.txt_admin_sanpham_dongia);
-
     }
 
     public void setItemClickListener(ItemClickListener listener) {

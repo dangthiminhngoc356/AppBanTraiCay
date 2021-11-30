@@ -24,6 +24,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
+import com.google.firebase.database.Query;
+
+
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -31,8 +35,10 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
 
 import java.util.HashMap;
 
@@ -171,7 +177,6 @@ public class AddNewProductActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
             imageUri = data.getData();
             hinhanh.setImageURI(imageUri);
