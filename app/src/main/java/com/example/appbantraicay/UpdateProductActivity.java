@@ -71,15 +71,17 @@ public class UpdateProductActivity extends AppCompatActivity {
                 input_dongia = dongia.getText().toString().trim();
 
                 if(imageUri == null) {
-                    Toast.makeText(UpdateProductActivity.this, "Vui lòng chọn hình ảnh", Toast.LENGTH_SHORT).show();
-                } else if (TextUtils.isEmpty(input_tensp)) {
-                    Toast.makeText(UpdateProductActivity.this, "Vui lòng nhập tên sản phẩm", Toast.LENGTH_SHORT).show();
-                } else if (TextUtils.isEmpty(input_dongia)) {
-                    Toast.makeText(UpdateProductActivity.this, "Vui lòng nhập đơn giá sản phẩm", Toast.LENGTH_SHORT).show();
-                } else if (TextUtils.isEmpty(input_mota)) {
-                    Toast.makeText(UpdateProductActivity.this, "Vui lòng nhập mô tả sản phẩm", Toast.LENGTH_SHORT).show();
+                    saveProduct1();
                 } else {
-                    validateProduct();
+                    if (TextUtils.isEmpty(input_tensp)) {
+                        Toast.makeText(UpdateProductActivity.this, "Vui lòng nhập tên sản phẩm", Toast.LENGTH_SHORT).show();
+                    } else if (TextUtils.isEmpty(input_dongia)) {
+                        Toast.makeText(UpdateProductActivity.this, "Vui lòng nhập đơn giá sản phẩm", Toast.LENGTH_SHORT).show();
+                    } else if (TextUtils.isEmpty(input_mota)) {
+                        Toast.makeText(UpdateProductActivity.this, "Vui lòng nhập mô tả sản phẩm", Toast.LENGTH_SHORT).show();
+                    } else {
+                        validateProduct();
+                    }
                 }
             }
         });
@@ -125,8 +127,6 @@ public class UpdateProductActivity extends AppCompatActivity {
     }
 
     private void validateProduct() {
-
-
         Ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -155,7 +155,7 @@ public class UpdateProductActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Uri> task) {
                                 if(task.isSuccessful()) {
                                     dowloadImage = task.getResult().toString();
-                                    saveProduct();
+                                    saveProduct2();
                                 }
                             }
                         });
@@ -170,8 +170,27 @@ public class UpdateProductActivity extends AppCompatActivity {
         });
     }
 
+    private void saveProduct1() {
+        HashMap<String, Object> map = new HashMap<>();
 
-    private void saveProduct() {
+        map.put("Ten", input_tensp);
+        map.put("DonGia", input_dongia);
+        map.put("MoTa", input_mota);
+        Ref.updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(!task.isSuccessful()) {
+                    Toast.makeText(UpdateProductActivity.this, "Cập nhật sản phẩm thất bại", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(UpdateProductActivity.this, "Cập nhật sản phẩm thành công", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+            }
+        });
+    }
+
+
+    private void saveProduct2() {
         HashMap<String, Object> map = new HashMap<>();
 
         map.put("Ten", input_tensp);
