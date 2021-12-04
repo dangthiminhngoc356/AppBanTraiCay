@@ -10,14 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBanTraiCay">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ThemNhaPhanPhoiActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".CapNhatNhaPhanPhoiActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".second_main"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".UpdateAccountActivity"
             android:exported="false" />
@@ -34,8 +37,6 @@
             android:name=".UpdateProductActivity"
             android:exported="true" />
         <activity
-
-
             android:name=".AddNewProductActivity"
             android:exported="true" />
         <activity
@@ -53,11 +54,9 @@
         <activity
             android:name=".AdminOrderActivity"
             android:exported="false" />
-
         <activity
             android:name=".ConfirmFinalOrderActivity"
             android:exported="false" />
-
         <activity
             android:name=".AdminActivity"
             android:exported="false" />
