@@ -46,15 +46,19 @@ public class AdminActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(AdminActivity.this, AdminAccountlistActivity.class);
                 startActivity(intent);
-
             }
         });
-
         loaisp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminActivity.this, ProductTypeAdminActivity.class));
+            }
+        });
 
+        donhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, AdminOrderActivity.class));
             }
         });
 

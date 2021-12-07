@@ -33,8 +33,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -81,7 +79,6 @@ public class AddNewProductActivity extends AppCompatActivity {
                 input_tensp = tensp.getText().toString();
                 input_mota = mota.getText().toString();
                 input_dongia = dongia.getText().toString().trim();
-
                 if(imageUri == null) {
                     Toast.makeText(AddNewProductActivity.this, "Vui lòng chọn hình ảnh", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(input_tensp)) {
@@ -103,10 +100,6 @@ public class AddNewProductActivity extends AppCompatActivity {
         Ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                int soluongsp = (int) snapshot.getChildrenCount() + 1;
-                idsp = "SP" + soluongsp;
-
                 Calendar calendar = Calendar.getInstance();
                 SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
                 SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
@@ -137,7 +130,6 @@ public class AddNewProductActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Uri> task) {
                                 if(task.isSuccessful()) {
-
                                     dowloadImage = task.getResult().toString();
                                     saveProduct();
                                 }
@@ -185,7 +177,7 @@ public class AddNewProductActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
+        if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
             imageUri = data.getData();
             hinhanh.setImageURI(imageUri);
         }
